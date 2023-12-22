@@ -46,10 +46,10 @@
                                 <p><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</p>-->
                             </div>
                             <div class="col-md-4">
-                                <h6 class="section-title text-start text-primary text-uppercase">Ronak Parmar</h6>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i><a style="color: black;" href="mailto:parmarronak21112003@gmail.com">parmarronak21112003@gmail.com</a></p>
-                                <p><i class="fa-brands fa-linkedin-in text-primary me-2"></i><a style="color: black;" href="https://www.linkedin.com/in/parmar-ronak-4aa170219/">Ronak Parmar</a></p>
-                                <p><i class="fa-solid fa-phone text-primary me-2"></i><a style="color: black;" href="">+91 99244 50208</a></p>
+                                <h6 class="section-title text-start text-primary text-uppercase">Smeet Rathod</h6>
+                                <p><i class="fa fa-envelope-open text-primary me-2"></i><a style="color: black;" href="mailto:smeetrathod963@gmail.com">smeetrathod963@gmail.com</a></p>
+                                <p><i class="fa-brands fa-linkedin-in text-primary me-2"></i><a style="color: black;" href="https://www.linkedin.com/in/smeet-rathod/">Smeet Rathod</a></p>
+                                <p><i class="fa-solid fa-phone text-primary me-2"></i><a style="color: black;" href="">+91 70480 08727</a></p>
                                 <!--<h6 class="section-title text-start text-primary text-uppercase">Technical</h6>
                                 <p><i class="fa fa-envelope-open text-primary me-2"></i><a href="malto:tech@example.com">tech@example.com</a></p>-->
                             </div>
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <asp:Button ID="Button1" runat="server" Text="Send Message" class="btn btn-primary w-100 py-3" />
+                                        <asp:Button ID="Button1" runat="server" Text="Send Message" class="btn btn-primary w-100 py-3" OnClick="Button1_Click" />
                                         <!--<button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>-->
                                     </div>
                                 </div>

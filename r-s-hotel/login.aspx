@@ -43,7 +43,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <asp:Button ID="Button1" runat="server" Text="Login" OnClick="login_click" class="btn btn-primary w-100 py-3" />
+                                        <asp:Button ID="Button1" runat="server" Text="Login"  class="btn btn-primary w-100 py-3" OnClick="Button1_Click" />
                                     </div>
                                 </div>
                            <!-- </form> -->

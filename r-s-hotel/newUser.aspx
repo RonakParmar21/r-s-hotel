@@ -8,7 +8,7 @@
                     <h6 class="section-title text-center text-primary text-uppercase">Register Now</h6>
                     <h1 class="mb-5"><span class="text-primary text-uppercase">Registration</span></h1>
                 </div>
-                <div class="wow fadeInUp" style="margin-left: 10vw;" data-wow-delay="0.1s">
+                <div class="text-center wow fadeInUp pb-2" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">personal details</h6>
                 </div>
                 <div class="row g-4" style="display: flex; justify-content:center">
@@ -96,7 +96,7 @@
                                             </div>
                                         </div>
 
-                                    <div class="wow fadeInUp" style="margin-left: 10vw;" data-wow-delay="0.1s">
+                                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">personal details</h6>
                 </div>
 
@@ -112,7 +112,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <asp:Button ID="Button1" OnClick="btnSubmit_Click" runat="server" class="btn btn-primary w-100 py-3" Text="Register" />
+                                        <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Register" OnClick="Button1_Click" />
                                     </div>
                                 </div>
                             
@@ -121,7 +121,8 @@
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>    
+        
     <script>
         function togglePassword() {
             var passwordField = document.getElementById('<%= password.ClientID %>');
@@ -133,4 +134,5 @@
             passwordField1.type = checkBox.checked ? 'text' : 'password';
         }
     </script>
+         
 </asp:Content>

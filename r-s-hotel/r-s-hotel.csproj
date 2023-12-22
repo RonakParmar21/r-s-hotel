@@ -122,6 +122,7 @@
     <Content Include="room.aspx" />
     <Content Include="service.aspx" />
     <Content Include="team.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="testimonial.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="team.aspx.designer.cs">
       <DependentUpon>team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="testimonial.aspx.cs">
       <DependentUpon>testimonial.aspx</DependentUpon>

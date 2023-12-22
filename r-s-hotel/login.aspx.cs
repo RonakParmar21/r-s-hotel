@@ -14,10 +14,13 @@ namespace r_s_restaurent
 
         }
 
-        protected void login_click(object sender, EventArgs e)
+      
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
             string em = email.Text;
             string pass = password.Text;
+            Response.Write("<script>alert('" + em + "')</script>");
         }
     }
 }

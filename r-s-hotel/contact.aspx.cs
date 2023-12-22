@@ -13,5 +13,14 @@ namespace r_s_restaurent
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String nm = name.Text;
+            String em = email.Text;
+            String sub = subject.Text;
+            String msg = message.Text;
+            Response.Write("<script>alert('" + nm + "')</script>");
+        }
     }
 }
