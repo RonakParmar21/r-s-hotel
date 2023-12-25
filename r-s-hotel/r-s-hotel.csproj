@@ -119,6 +119,7 @@
     <Content Include="lib\wow\wow.min.js" />
     <Content Include="login.aspx" />
     <Content Include="newUser.aspx" />
+    <Content Include="otp.aspx" />
     <Content Include="room.aspx" />
     <Content Include="service.aspx" />
     <Content Include="team.aspx" />
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="newUser.aspx.designer.cs">
       <DependentUpon>newUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="otp.aspx.cs">
+      <DependentUpon>otp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="otp.aspx.designer.cs">
+      <DependentUpon>otp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="room.aspx.cs">

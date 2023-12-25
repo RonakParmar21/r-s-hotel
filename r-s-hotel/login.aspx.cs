@@ -20,7 +20,7 @@ namespace r_s_restaurent
         {
             string em = email.Text;
             string pass = password.Text;
-            Response.Write("<script>alert('" + em + "')</script>");
+            //Response.Write("<script>alert('" + em + "')</script>");
         }
     }
 }
