@@ -55,14 +55,16 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
+                                            <asp:TextBox ID="name" runat="server" class="form-control" placeholder="Your Name"></asp:TextBox>
+                                            <asp:Label runat="server" for="name" AssociatedControlID="name">Enter Your Name</asp:Label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="name" ErrorMessage="Name must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
+                                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Your Email"></asp:TextBox>
+                                            <asp:Label runat="server" for="email" AssociatedControlID="email">Enter Your Email</asp:Label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
