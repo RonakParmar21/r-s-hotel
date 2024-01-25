@@ -246,10 +246,6 @@
     <Content Include="admin\assets\pages\widget\amchart\serial.min.js" />
     <Content Include="admin\assets\pages\widget\excanvas.js" />
     <Content Include="admin\default.aspx" />
-    <Content Include="App_Data\rshotel.mdf" />
-    <Content Include="App_Data\rshotel_log.ldf">
-      <DependentUpon>rshotel.mdf</DependentUpon>
-    </Content>
     <Content Include="booking.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />

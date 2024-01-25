@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -75,12 +76,6 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <!--<asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Your Email" TextMode="Email"></asp:TextBox>-->
-                                            <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-<!--                                            <asp:Label runat="server" for="email" AssociatedControlID="email">Enter Your Email</asp:Label>-->
-                                            <!--<label for="email">Your Email</label>-->
-                                            <!--<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="email" ErrorMessage="email must be required" ForeColor="Red"></asp:RequiredFieldValidator>-->
-                                            <!--<asp:Label runat="server" for="gender" AssociatedControlID="gender">Select Your Gender</asp:Label>-->
                                             <p>Select Your Gender</p>
                                            
                                             
@@ -95,58 +90,6 @@
 
                                             </div>
                                         </div>
-
-                                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                                        <h6 class="section-title text-center text-primary text-uppercase">address details</h6>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <asp:TextBox ID="pincode" runat="server" class="form-control" placeholder="Your Pincode" pattern="[0-9]{6}"></asp:TextBox>
-                                            <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-                                            <asp:Label runat="server" for="pincode" AssociatedControlID="pincode">Enter Your Pincode</asp:Label>
-                                            <!--<label for="email">Your Email</label>-->
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="pincode" ErrorMessage="pincode must be required" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <asp:TextBox ID="state" runat="server" class="form-control" placeholder="Your State" disabled="true"></asp:TextBox>
-                                            <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-                                            <asp:Label runat="server" for="state" AssociatedControlID="state">Your State is : </asp:Label>
-                                            <!--<label for="email">Your Email</label>-->
-                                            <!--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="pincode" ErrorMessage="pincode must be required" ForeColor="Red"></asp:RequiredFieldValidator>-->
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <asp:TextBox ID="dist" runat="server" class="form-control" placeholder="Your District" disabled="true"></asp:TextBox>
-                                            <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-                                            <asp:Label runat="server" for="dist" AssociatedControlID="dist">Your District is : </asp:Label>
-                                            <!--<label for="email">Your Email</label>-->
-                                            <!--<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="pincode" ErrorMessage="pincode must be required" ForeColor="Red"></asp:RequiredFieldValidator>-->
-                                        </div>
-                                    </div>
-
-                                     <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <asp:DropDownList ID="city" class="form-control" runat="server" AutoPostBack="True">
-                                                <asp:ListItem>first</asp:ListItem>
-                                                <asp:ListItem>second</asp:ListItem>
-                                            </asp:DropDownList>
-                                            <asp:Label runat="server" for="city" AssociatedControlID="city">Select Your City</asp:Label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-floating">
-                                            <asp:TextBox ID="address" runat="server" class="form-control" placeholder="Your Address" TextMode="MultiLine" Rows="5" Height="150"></asp:TextBox>
-                                            <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-                                            <asp:Label runat="server" for="address" AssociatedControlID="address">Your Address</asp:Label>
-                                            <!--<label for="email">Your Email</label>-->
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="address" ErrorMessage="Address must be required" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-
 
                                     <div class="col-12" style="display:flex; justify-content:space-between">
                                         <div class="form-floating">

@@ -8,12 +8,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using System.Web.Script.Serialization;
 
 namespace r_s_hotel
 {
     public partial class newUser : System.Web.UI.Page
     {
-        static string activationgcode;
+        int activationgcode;
         protected void Page_Load(object sender, EventArgs e)
         {
      
@@ -27,20 +28,13 @@ namespace r_s_hotel
 
             Random random = new Random();
             // Generate a random six-digit code
-            activationgcode = random.Next(100000, 1000000).ToString();
+            activationgcode = random.Next(100000, 1000000);
             // Print or use the generated code
             //Console.WriteLine("Generated Six-Digit Code: " + sixDigitCode);
 
-
-
-
-
-
             sendcode();
 
-
-
-            Response.Redirect("verifyEmail.aspx");
+            Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
         }
 
         private void sendcode()
@@ -67,6 +61,7 @@ namespace r_s_hotel
                 Console.Write(e);
             }
         }
+
     }
 
 }
