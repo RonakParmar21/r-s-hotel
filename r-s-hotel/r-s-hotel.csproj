@@ -551,6 +551,7 @@
     <Content Include="scss\bootstrap\scss\_type.scss" />
     <Content Include="scss\bootstrap\scss\_utilities.scss" />
     <Content Include="scss\bootstrap\scss\_variables.scss" />
+    <Content Include="rshotel.bacpac" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
