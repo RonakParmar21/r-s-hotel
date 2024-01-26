@@ -57,7 +57,7 @@
                                             <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password" onchange="togglePassword();" />
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="mobile" runat="server" class="form-control" placeholder="Enter Your Mobile No." TextMode="Number" ></asp:TextBox>
+                                            <asp:TextBox ID="mobile" runat="server" class="form-control" placeholder="Enter Your Mobile No." pattern="[0-9]{10}" ></asp:TextBox>
                                             <asp:Label runat="server" for="mobile" AssociatedControlID="mobile">Enter Your Mobile no.</asp:Label>
                                            <!-- <input type="password" class="form-control" id="password" placeholder="Subject">
                                             <label for="password">Your Password</label>-->

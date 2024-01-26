@@ -14,46 +14,38 @@ namespace r_s_hotel
 {
     public partial class newUser : System.Web.UI.Page
     {
+        string nm, em, pass, cpass, db, ge;
         int activationgcode;
-
-        string n;
-        string em;
-        string pass;
-        string cpass;
-        string mo;
-        string d;
-        string g;
+     
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            n = name.Text;
-            em = email.Text;
-            pass = password.Text;
-            cpass = cpassword.Text;
-            mo = mobile.Text;
-            d = dob.Text;
-            g = gender.SelectedValue;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            nm = name.Text;
+            em = email.Text;
+            pass = password.Text;
+            cpass = cpassword.Text;
+            db = dob.Text;
+            ge = gender.SelectedValue;
+
+            long mo = long.Parse(mobile.Text);
+
             Random random = new Random();
             activationgcode = random.Next(100000, 1000000);
             
             sendcode();
+            string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&g={ge}&rNo={activationgcode}&m={mo}";
 
-            
-
-            Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
-
-            Response.Redirect($"verifyEmail.aspx?uNm={n}");
+            Response.Redirect(targetUrl);
 
             /*Response.Redirect($"verifyEmail.aspx?nm={n}");
-            Response.Redirect($"verifyEmail.aspx?em={em}");
-            Response.Redirect($"verifyEmail.aspx?pass={pass}");
-            Response.Redirect($"verifyEmail.aspx?cpass={cpass}");
-            Response.Redirect($"verifyEmail.aspx?mo={mo}");
-            Response.Redirect($"verifyEmail.aspx?dob={d}");
-            Response.Redirect($"verifyEmail.aspx?g={g}");*/
+            Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
+            */
+
         }
 
         private void sendcode()
