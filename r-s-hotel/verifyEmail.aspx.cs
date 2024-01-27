@@ -74,6 +74,7 @@ namespace r_s_hotel
                     }
 
                     Response.Write("<script>alert('Registration Succsesfully..')</script>");
+                    Response.Redirect("login.aspx");
                 }
                 else
                 {

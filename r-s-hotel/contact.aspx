@@ -90,7 +90,16 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <asp:TextBox ID="mobile" pattern="[0-9]{10}" class="form-control" runat="server" placeholder="Enter Your Mobile No."></asp:TextBox>
+                                            <asp:Label runat="server" for="mobile" AssociatedControlID="mobile">Enter Your Mobile No.</asp:Label>
+                                            <!--<input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>-->
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="mobile" ErrorMessage="Mobile no must be required" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
                                         <div class="form-floating">
                                             <asp:TextBox ID="subject" class="form-control" runat="server" placeholder="Enter Your Subject"></asp:TextBox>
                                             <asp:Label runat="server" for="subject" AssociatedControlID="subject">Enter Your Subject</asp:Label>
