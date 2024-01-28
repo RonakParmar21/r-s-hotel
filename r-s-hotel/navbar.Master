@@ -96,8 +96,41 @@
                                 </div>
                                 <a href="contact.aspx" class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="login.aspx" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Login now<i class="fa fa-arrow-right ms-3"></i></a>
+                            <!--<a href="login.aspx" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Login now<i class="fa fa-arrow-right ms-3"></i></a>-->
+                            <!--<asp:Button ID="loginBtn" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block" runat="server" Text="Login Now" />-->
                         </div>
+
+
+                        <li class="dropdown" style="list-style-type:none">
+                                                    <button class="btn btn-group dropdown-toggle btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <!--<i class="fa-solid fa-user fa-2x cart"
+                                                            style="color: whitesmoke"></i>-->
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu bg-dark navbar-light"
+                                                        style="margin-left:-43px;font-size:18px;">
+                                                        <li>
+                                                            <asp:Label ID="Label1" runat="server"
+                                                                CssClass="dropdown-item bg-dark" style="color:white;" ForeColor="White">
+                                                            </asp:Label>
+                                                        </li>
+                                                        <li style="color:white">
+                                                            <asp:HyperLink ID="HyperLink3"
+                                                                CssClass="dropdown-item bg-dark x-large text-white" runat="server"
+                                                                NavigateUrl="profile.aspx" Visible="False">Profile
+                                                            <%--</asp:HyperLink>--%>
+                                                            <asp:HyperLink ID="HyperLink1"
+                                                                CssClass="dropdown-item bg-dark x-large text-white" runat="server"
+                                                                NavigateUrl="logout.aspx" Visible="False">Logout
+                                                            </asp:HyperLink>
+                                                            
+                                                            <asp:HyperLink ID="HyperLink2"
+                                                                CssClass="dropdown-item bg-dark x-large text-white" runat="server"
+                                                                NavigateUrl="login.aspx">Login</asp:HyperLink>
+                                                        </li>
+                                                    </ul>
+                                                </li>
                     </nav>
                 </div>
             </div>

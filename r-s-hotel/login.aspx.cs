@@ -38,6 +38,7 @@ namespace r_s_restaurent
                     {
                         Session["user"] = em;
                         Response.Write("<script>alert('Login Success...')</script>");
+                        Response.Redirect("default.aspx");
                     } 
                     else
                     {
