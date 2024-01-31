@@ -116,7 +116,7 @@
                           <li>
                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                           </li>
-                          <li class="header-search">
+                          <!--<li class="header-search">
                               <div class="main-search morphsearch-search">
                                   <div class="input-group">
                                       <span class="input-group-addon search-close"><i class="ti-close"></i></span>
@@ -129,10 +129,10 @@
                               <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
                                   <i class="ti-fullscreen"></i>
                               </a>
-                          </li>
+                          </li>-->
                       </ul>
                       <ul class="nav-right">
-                          <li class="header-notification">
+                         <!-- <li class="header-notification">
                               <a href="#!" class="waves-effect waves-light">
                                   <i class="ti-bell"></i>
                                   <span class="badge bg-c-red"></span>
@@ -144,9 +144,12 @@
                                   </li>
                                   <li class="waves-effect waves-light">
                                       <div class="media">
-                                          <img class="d-flex align-self-center img-radius" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                          <img class="d-flex align-self-center img-radius" src="assets/images/faq_man.png" alt="Generic placeholder image">
                                           <div class="media-body">
-                                              <h5 class="notification-user">John Doe</h5>
+                                              <h5 class="notification-user">
+                                                  <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                                              </h5>
+                                              
                                               <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
                                               <span class="notification-time">30 minutes ago</span>
                                           </div>
@@ -173,25 +176,27 @@
                                       </div>
                                   </li>
                               </ul>
-                          </li>
+                          </li>-->
                           <li class="user-profile header-notification">
                               <a href="#!" class="waves-effect waves-light">
-                                  <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                  <span>John Doe</span>
+                                  <img src="assets/images/faq_man.png" class="img-radius" alt="User-Profile-Image">
+                                  <span>
+                                      <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                                  </span>
                                   <i class="ti-angle-down"></i>
                               </a>
                               <ul class="show-notification profile-notification">
-                                  <li class="waves-effect waves-light">
+                                  <!--<li class="waves-effect waves-light">
                                       <a href="#!">
                                           <i class="ti-settings"></i> Settings
                                       </a>
-                                  </li>
+                                  </li>-->
                                   <li class="waves-effect waves-light">
                                       <a href="user-profile.html">
                                           <i class="ti-user"></i> Profile
                                       </a>
                                   </li>
-                                  <li class="waves-effect waves-light">
+                                  <!--<li class="waves-effect waves-light">
                                       <a href="email-inbox.html">
                                           <i class="ti-email"></i> My Messages
                                       </a>
@@ -200,11 +205,16 @@
                                       <a href="auth-lock-screen.html">
                                           <i class="ti-lock"></i> Lock Screen
                                       </a>
-                                  </li>
+                                  </li>-->
                                   <li class="waves-effect waves-light">
-                                      <a href="auth-normal-sign-in.html">
+                                      <!--<a href="logout.aspx">
                                           <i class="ti-layout-sidebar-left"></i> Logout
-                                      </a>
+                                      </a>-->
+                                      <asp:HyperLink ID="HyperLink1"
+                                                                CssClass="dropdown-item x-large" runat="server"
+                                                                NavigateUrl="admin_logout.aspx" Visible="True">
+                                          <i class="ti-layout-sidebar-left"></i> Logout
+                                                            </asp:HyperLink>
                                   </li>
                               </ul>
                           </li>
@@ -220,13 +230,15 @@
                       <div class="pcoded-inner-navbar main-menu">
                           <div class="">
                               <div class="main-menu-header">
-                                  <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                                  <img class="img-80 img-radius" src="assets/images/faq_man.png" alt="User-Profile-Image">
                                   <div class="user-details">
-                                      <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
+                                      <span id="more-details">
+                                          <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                                          <i class="fa fa-caret-down"></i></span>
                                   </div>
                               </div>
         
-                              <div class="main-menu-content">
+                              <!--<div class="main-menu-content">
                                   <ul>
                                       <li class="more-details">
                                           <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
@@ -234,9 +246,9 @@
                                           <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
                                       </li>
                                   </ul>
-                              </div>
+                              </div>-->
                           </div>
-                          <div class="p-15 p-b-0">
+                          <!--<div class="p-15 p-b-0">
                               <form class="form-material">
                                   <div class="form-group form-primary">
                                       <input type="text" name="footer-email" class="form-control" required="">
@@ -245,8 +257,8 @@
                                   </div>
                               </form>
                           </div>
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div>
-                          <ul class="pcoded-item pcoded-left-item">
+                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div>-->
+                          <ul class="pcoded-item pcoded-left-item" style="margin-top: 20px;">
                               <li class="active">
                                   <a href="index.html" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
@@ -336,7 +348,7 @@
                                   </ul>
                               </li>
                           </ul>
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Forms &amp; Tables</div>
+                         <!-- <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Forms &amp; Tables</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
                                   <a href="form-elements-component.html" class="waves-effect waves-dark">
@@ -447,7 +459,7 @@
                                   </ul>
                               </li>
                           </ul>
-                      </div>
+                      </div>-->
                   </nav>
                   <div class="pcoded-content">
                       <!-- Page-header start -->
@@ -472,15 +484,15 @@
                               </div>
                           </div>
                       </div>
-                      <!-- Page-header end -->
+                      <!-- Page-header end
                         <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
+                            <!-- Main-body start --
                             <div class="main-body">
                                 <div class="page-wrapper">
-                                    <!-- Page-body start -->
+                                    <!-- Page-body start --
                                     <div class="page-body">
                                         <div class="row">
-                                            <!-- task, page, download counter  start -->
+                                            <!-- task, page, download counter  start --
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="card">
                                                     <div class="card-block">
@@ -582,9 +594,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- task, page, download counter  end -->
+                                            <!-- task, page, download counter  end --
     
-                                            <!--  sale analytics start -->
+                                            <!--  sale analytics start --
                                             <div class="col-xl-8 col-md-12">
                                                 <div class="card">
                                                     <div class="card-header">
@@ -638,9 +650,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--  sale analytics end -->
+                                            <!--  sale analytics end --
     
-                                            <!--  project and team member start -->
+                                            <!--  project and team member start --
                                             <div class="col-xl-8 col-md-12">
                                                 <div class="card table-card">
                                                     <div class="card-header">
@@ -839,14 +851,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--  project and team member end -->
+                                            <!--  project and team member end --
                                         </div>
                                     </div>
-                                    <!-- Page-body end -->
+                                    <!-- Page-body end --
                                 </div>
                                 <div id="styleSelector"> </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

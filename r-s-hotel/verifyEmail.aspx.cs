@@ -11,7 +11,8 @@ namespace r_s_hotel
 {
     public partial class verifyEmail : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BPUI4AI;Initial Catalog=rshotel;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BPUI4AI;Initial Catalog=rshotel;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)

@@ -119,7 +119,7 @@
                                                             <asp:HyperLink ID="HyperLink3"
                                                                 CssClass="dropdown-item bg-dark x-large text-white" runat="server"
                                                                 NavigateUrl="profile.aspx" Visible="False">Profile
-                                                            <%--</asp:HyperLink>--%>
+                                                            </asp:HyperLink>
                                                             <asp:HyperLink ID="HyperLink1"
                                                                 CssClass="dropdown-item bg-dark x-large text-white" runat="server"
                                                                 NavigateUrl="logout.aspx" Visible="False">Logout

@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.aspx" />
+    <Content Include="admin\admin_logout.aspx" />
     <Content Include="admin\assets\css\animate.css\css\animate.css" />
     <Content Include="admin\assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="admin\assets\css\chartist\chartist.css" />
@@ -244,6 +245,7 @@
     <Content Include="admin\assets\pages\widget\amchart\serial.min.js" />
     <Content Include="admin\assets\pages\widget\excanvas.js" />
     <Content Include="admin\default.aspx" />
+    <Content Include="admin\login.aspx" />
     <Content Include="booking.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -313,12 +315,26 @@
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\admin_logout.aspx.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_logout.aspx.designer.cs">
+      <DependentUpon>admin_logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\nav_footer.Master.cs">
       <DependentUpon>nav_footer.Master</DependentUpon>
