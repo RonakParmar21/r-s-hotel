@@ -244,6 +244,7 @@
     <Content Include="admin\assets\pages\widget\amchart\serial.js" />
     <Content Include="admin\assets\pages\widget\amchart\serial.min.js" />
     <Content Include="admin\assets\pages\widget\excanvas.js" />
+    <Content Include="admin\contactDetails.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\login.aspx" />
     <Content Include="booking.aspx" />
@@ -321,6 +322,13 @@
     </Compile>
     <Compile Include="admin\admin_logout.aspx.designer.cs">
       <DependentUpon>admin_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\contactDetails.aspx.cs">
+      <DependentUpon>contactDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\contactDetails.aspx.designer.cs">
+      <DependentUpon>contactDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

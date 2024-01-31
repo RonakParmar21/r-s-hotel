@@ -27,7 +27,7 @@ namespace r_s_hotel.admin
             {
                 Response.Redirect("login.aspx");
                 string nm = Session["admin"].ToString();
-                Label1.Text = nm;
+                //Label1.Text = nm;
                 Label2.Text = nm;
                 Label3.Text = nm;
             }
