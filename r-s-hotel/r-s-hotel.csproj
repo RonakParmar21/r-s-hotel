@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="admin\addAdmin.aspx" />
+    <Content Include="admin\addRoom.aspx" />
     <Content Include="admin\adminUserDetails.aspx" />
     <Content Include="admin\admin_logout.aspx" />
     <Content Include="admin\assets\css\animate.css\css\animate.css" />
@@ -326,6 +327,13 @@
     </Compile>
     <Compile Include="admin\addAdmin.aspx.designer.cs">
       <DependentUpon>addAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addRoom.aspx.cs">
+      <DependentUpon>addRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addRoom.aspx.designer.cs">
+      <DependentUpon>addRoom.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\adminUserDetails.aspx.cs">
       <DependentUpon>adminUserDetails.aspx</DependentUpon>
