@@ -25,6 +25,7 @@ namespace r_s_hotel.admin
                 }
 
                 con.Open();
+
                 displayData();
             }
             else
@@ -46,16 +47,28 @@ namespace r_s_hotel.admin
 
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
-           /* string Id = e.CommandArgument.ToString();
-            deleteRecord(Id);*/
+            string Id = e.CommandArgument.ToString();
+            deleteRecord(Id);
         }
         public void deleteRecord(string id)
-        {/*
-            cmd = new SqlCommand("delete from Checkout where Id = '" + id + "'", con);
+        {
+            cmd = new SqlCommand("delete from contact where contact_id = '" + id + "'", con);
             cmd.ExecuteNonQuery();
             displayData();
             Response.Write("<script>alert('Record Deleted...')</script>");
-            */
         }
+
+       /* public void deleteRecord(string id)
+        {
+            string query = "delete from contact where contact_id = @ContactId";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@ContactId", id);
+            con.Open(); // Ensure your connection is open before executing the command.
+            cmd.ExecuteNonQuery();
+            con.Close(); // Don't forget to close the connection.
+            displayData();
+            Response.Write("<script>alert('Record Deleted...')</script>");
+        }*/
+
     }
 }

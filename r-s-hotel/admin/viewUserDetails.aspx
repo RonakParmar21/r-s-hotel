@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" CodeBehind="viewUserDetails.aspx.cs" Inherits="r_s_hotel.admin.viewUserDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="viewUserDetails.aspx.cs" Inherits="r_s_hotel.admin.viewUserDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -59,6 +59,11 @@
             <asp:TemplateField HeaderText="Gender">
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("user_gender") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("user_id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

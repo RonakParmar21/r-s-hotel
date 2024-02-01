@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" CodeBehind="adminUserDetails.aspx.cs" Inherits="r_s_hotel.admin.adminUserDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="adminUserDetails.aspx.cs" Inherits="r_s_hotel.admin.adminUserDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -57,6 +57,11 @@
             <asp:TemplateField HeaderText="DOB">
                 <ItemTemplate>
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("admin_dob") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("admin_id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

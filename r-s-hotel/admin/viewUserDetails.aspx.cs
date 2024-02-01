@@ -47,16 +47,15 @@ namespace r_s_hotel.admin
 
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
-            /* string Id = e.CommandArgument.ToString();
-             deleteRecord(Id);*/
+             string Id = e.CommandArgument.ToString();
+             deleteRecord(Id);
         }
         public void deleteRecord(string id)
-        {/*
-            cmd = new SqlCommand("delete from Checkout where Id = '" + id + "'", con);
+        {
+            cmd = new SqlCommand("delete from [user] where user_id = '" + id + "'", con);
             cmd.ExecuteNonQuery();
             displayData();
             Response.Write("<script>alert('Record Deleted...')</script>");
-            */
         }
     }
 }

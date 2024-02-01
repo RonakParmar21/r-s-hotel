@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" CodeBehind="contactDetails.aspx.cs" Inherits="r_s_hotel.admin.contactDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="contactDetails.aspx.cs" Inherits="r_s_hotel.admin.contactDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -59,6 +59,12 @@
             <asp:TemplateField HeaderText="Description">
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("contact_description") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("contact_id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
