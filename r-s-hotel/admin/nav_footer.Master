@@ -147,11 +147,11 @@
                     </div>
                 </nav>
 
-                <div class="pcoded-main-container">
+                <div class="" style="margin-top: 20px">
                     <div class="pcoded-wrapper">
                         <nav class="pcoded-navbar">
                             <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                            <div class="pcoded-inner-navbar main-menu">
+                            <div class="pcoded-inner-navbar main-menu" style="width:200px">
                                 <div class="">
                                     <div class="main-menu-header">
                                         <img class="img-80 img-radius" src="assets/images/faq_man.png" alt="User-Profile-Image">
@@ -198,11 +198,18 @@
                                                         CssClass="dropdown-item x-large" runat="server"
                                                         NavigateUrl="~/admin/contactDetails.aspx" Visible="true">Contact Details
                                                     </asp:HyperLink>
-                                                    <!--<a href="contactDetails.aspx" class="waves-effect waves-dark">
-                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Contact Details</span>
-                                              <span class="pcoded-mcaret"></span>
-                                          </a>-->
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="HyperLink4"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/viewUserDetails.aspx" Visible="true">User Details
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="HyperLink5"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/adminUserDetails.aspx" Visible="true">Admin User Details
+                                                    </asp:HyperLink>
                                                 </li>
                                             </ul>
                                         </li>

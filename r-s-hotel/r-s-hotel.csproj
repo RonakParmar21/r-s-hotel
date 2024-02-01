@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.aspx" />
+    <Content Include="admin\addAdmin.aspx" />
+    <Content Include="admin\adminUserDetails.aspx" />
     <Content Include="admin\admin_logout.aspx" />
     <Content Include="admin\assets\css\animate.css\css\animate.css" />
     <Content Include="admin\assets\css\bootstrap\css\bootstrap.min.css" />
@@ -247,6 +249,8 @@
     <Content Include="admin\contactDetails.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\login.aspx" />
+    <Content Include="admin\verify.aspx" />
+    <Content Include="admin\viewUserDetails.aspx" />
     <Content Include="booking.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -316,6 +320,20 @@
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\addAdmin.aspx.cs">
+      <DependentUpon>addAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addAdmin.aspx.designer.cs">
+      <DependentUpon>addAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adminUserDetails.aspx.cs">
+      <DependentUpon>adminUserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminUserDetails.aspx.designer.cs">
+      <DependentUpon>adminUserDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\admin_logout.aspx.cs">
       <DependentUpon>admin_logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -350,6 +368,20 @@
     </Compile>
     <Compile Include="admin\nav_footer.Master.designer.cs">
       <DependentUpon>nav_footer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\verify.aspx.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\verify.aspx.designer.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\viewUserDetails.aspx.cs">
+      <DependentUpon>viewUserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\viewUserDetails.aspx.designer.cs">
+      <DependentUpon>viewUserDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="booking.aspx.cs">
       <DependentUpon>booking.aspx</DependentUpon>
