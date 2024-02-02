@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="room.aspx.cs" Inherits="r_s_restaurent.room" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="rooms.aspx.cs" Inherits="r_s_hotel.rooms" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <div class="container-xxl bg-white p-0">
+    <div class="container-xxl bg-white p-0">
          
         <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
@@ -23,6 +23,8 @@
         <!-- Page Header End -->
 
 
+
+
         
 
 
@@ -34,7 +36,92 @@
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                    <!-- using of data list -->
+                 <asp:DataList ID="dlRooms" runat="server" RepeatColumns="3" CssClass="row">
+                     <ItemTemplate>
+                         <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                             <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
+                                 <div class="position-relative">
+                                     <!--<img class="img-fluid" src='C:/Users/Lenovo/source/repos/RonakParmar21/r-s-hotel/r-s-hotel/admin/assets/images/rooms/%# Eval("room_img") %>' alt='%# Eval("room_type") %>'>-->
+                                     <!--<img class="img-fluid" src='<# Eval("room_img","~/admin/assets/images/rooms/{0}") %>' alt="">-->
+                                     <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("room_img", "~/admin/assets/images/rooms/{0}") %>' style="width: 100%;" />
+
+                                     <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"><%# Eval("room_price") %>/Night</small>
+                                 </div>
+                                 <div class="p-4 mt-2">
+                                     <div class="d-flex justify-content-between mb-3">
+                                         <h5 class="mb-0"><%# Eval("room_type") %></h5>
+                                         <div class="ps-2">
+                                             <!-- Dynamically generate star ratings based on data -->
+                                         </div>
+                                     </div>
+                                     <div class="d-flex mb-3">
+                                         <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i><%# Eval("room_capacity") %> Bed</small>
+                                         <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i><%# Eval("room_capacity") %> Bath</small>
+                                         <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                                     </div>
+                                     <p class="text-body mb-3"><%# Eval("room_description") %></p>
+                                     <div class="d-flex justify-content-between">
+                                         <a class="btn btn-sm btn-primary rounded py-2 px-4" href="RoomDetails.aspx?RoomId=<%# Eval("room_id") %>">View Detail</a>
+                                         <a class="btn btn-sm btn-dark rounded py-2 px-4" href="BookRoom.aspx?RoomId=<%# Eval("room_id") %>">Book Now</a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </ItemTemplate>
+                 </asp:DataList>
+
+
+
+
+
+
+
+
+
+                   <!-- my code start 
+
+                    <asp:Repeater ID="RepeaterRooms" runat="server">
+    <ItemTemplate>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="room-item shadow rounded overflow-hidden">
+                <div class="position-relative">
+                    <img class="img-fluid" src='admin/assets/images/rooms/%# Eval("room_img") %>' alt='%# Eval("room_type") %>'>
+                    <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
+                        $<# Eval("room_price") %>/Night
+                    </small>
+                </div>
+                <div class="p-4 mt-2">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 class="mb-0"><# Eval("room_no") %></h5>
+                        <!-- Example for dynamic stars, you need to implement the logic to determine the count --
+                        <div class="ps-2">
+                            %-- Dynamically generate stars based on rating --%>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>< Eval("room_capacity") %> Bed</small>
+                        <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i><# Eval("room_capacity") %> Bath</small>
+                        <small><i class="fa fa-wifi text-primary me-2"></i><# Eval("room_capacity") %></small>
+                    </div>
+                    <p class="text-body mb-3"><# Eval("room_description") %></p>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="RoomDetails.aspx?RoomID=%# Eval("room_id") %>">View Detail</a>
+                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="BookRoom.aspx?RoomID=%# Eval("room_id") %>">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ItemTemplate>
+</asp:Repeater>-->
+
+
+
+                    <!-- my code end-->
+
+
+                   <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
                                 <img class="img-fluid" src="img/room-1.jpg" alt="">
@@ -213,7 +300,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

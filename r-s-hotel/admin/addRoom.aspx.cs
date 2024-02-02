@@ -41,6 +41,7 @@ namespace r_s_hotel.admin
             con.Close();
 
             string pimg1 = "~/admin/assets/images/rooms/" + img1.FileName;
+            //string pimg1 = "~/img/"+img1.FileName;
             img1.SaveAs(MapPath(pimg1));
 
             con.Open();

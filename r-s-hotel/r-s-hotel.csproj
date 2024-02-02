@@ -309,7 +309,7 @@
     <Content Include="logout.aspx" />
     <Content Include="newUser.aspx" />
     <Content Include="otp.aspx" />
-    <Content Include="room.aspx" />
+    <Content Include="rooms.aspx" />
     <Content Include="service.aspx" />
     <Content Include="team.aspx" />
     <Content Include="test.aspx" />
@@ -480,12 +480,12 @@
       <DependentUpon>otp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="room.aspx.cs">
-      <DependentUpon>room.aspx</DependentUpon>
+    <Compile Include="rooms.aspx.cs">
+      <DependentUpon>rooms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="room.aspx.designer.cs">
-      <DependentUpon>room.aspx</DependentUpon>
+    <Compile Include="rooms.aspx.designer.cs">
+      <DependentUpon>rooms.aspx</DependentUpon>
     </Compile>
     <Compile Include="service.aspx.cs">
       <DependentUpon>service.aspx</DependentUpon>
