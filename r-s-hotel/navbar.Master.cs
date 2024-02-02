@@ -12,8 +12,6 @@ namespace r_s_restaurent
     public partial class Site1 : System.Web.UI.MasterPage
     {
         SqlConnection con;
-        SqlCommand cmd;
-        SqlDataReader dr;
         string session;
         protected void Page_Load(object sender, EventArgs e)
         {

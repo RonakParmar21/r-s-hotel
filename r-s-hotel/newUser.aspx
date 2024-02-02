@@ -77,19 +77,19 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <p>Select Your Gender</p>
-                                           
-                                            
+
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                     <asp:RadioButtonList ID="gender" RepeatDirection="Horizontal" runat="server" AutoPostBack="false">
+                                            <asp:RadioButtonList ID="gender" RepeatDirection="Horizontal" runat="server" AutoPostBack="false">
                                                 <asp:ListItem Selected="True">Male</asp:ListItem>
                                                 <asp:ListItem style="margin-left: 3vw;">Female</asp:ListItem>
                                             </asp:RadioButtonList>
 
-                                            </div>
                                         </div>
+                                    </div>
 
                                     <div class="col-12" style="display:flex; justify-content:space-between">
                                         <div class="form-floating">

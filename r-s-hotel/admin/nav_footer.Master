@@ -177,11 +177,22 @@
                                             </a>
                                             <ul class="pcoded-submenu">
                                                 <li class=" ">
-                                                    <a href="accordion.html" class="waves-effect waves-dark">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Accordion</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
+                                                    <asp:HyperLink ID="addAdmin"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/addAdmin.aspx" Visible="true">Add Admin
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="addRoom"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/addRoom.aspx" Visible="true">Add Room
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="addStaff"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/addStaff.aspx" Visible="true">Add Staff
+                                                    </asp:HyperLink>
                                                 </li>
                                             </ul>
                                         </li>
@@ -194,13 +205,19 @@
                                             </a>
                                             <ul class="pcoded-submenu">
                                                 <li class=" ">
-                                                    <asp:HyperLink ID="HyperLink3"
+                                                    <asp:HyperLink ID="roomDetails"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/viewRoomDetails.aspx" Visible="true">Room Details
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="contactDetails"
                                                         CssClass="dropdown-item x-large" runat="server"
                                                         NavigateUrl="~/admin/contactDetails.aspx" Visible="true">Contact Details
                                                     </asp:HyperLink>
                                                 </li>
                                                 <li class=" ">
-                                                    <asp:HyperLink ID="HyperLink4"
+                                                    <asp:HyperLink ID="userDetails"
                                                         CssClass="dropdown-item x-large" runat="server"
                                                         NavigateUrl="~/admin/viewUserDetails.aspx" Visible="true">User Details
                                                     </asp:HyperLink>
@@ -209,6 +226,12 @@
                                                     <asp:HyperLink ID="HyperLink5"
                                                         CssClass="dropdown-item x-large" runat="server"
                                                         NavigateUrl="~/admin/adminUserDetails.aspx" Visible="true">Admin User Details
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="viewStaff"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/viewStaffDetails.aspx" Visible="true">Staff Details
                                                     </asp:HyperLink>
                                                 </li>
                                             </ul>

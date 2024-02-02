@@ -12,7 +12,6 @@ namespace r_s_hotel.admin
     public partial class addRoom : System.Web.UI.Page
     {
         SqlConnection con;
-        SqlCommand cmd;
         //con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         
         protected void Page_Load(object sender, EventArgs e)
