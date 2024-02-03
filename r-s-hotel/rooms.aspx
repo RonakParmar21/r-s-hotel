@@ -45,7 +45,8 @@
                                  <div class="position-relative">
                                      <!--<img class="img-fluid" src='C:/Users/Lenovo/source/repos/RonakParmar21/r-s-hotel/r-s-hotel/admin/assets/images/rooms/%# Eval("room_img") %>' alt='%# Eval("room_type") %>'>-->
                                      <!--<img class="img-fluid" src='<# Eval("room_img","~/admin/assets/images/rooms/{0}") %>' alt="">-->
-                                     <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("room_img", "~/admin/assets/images/rooms/{0}") %>' style="width: 100%;" />
+                                     <!--<asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<% Eval("room_img", "~/admin/assets/images/rooms/{0}") %>' style="width: 100%;" />-->
+                                     <asp:Image ID="Image33" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("room_img") %>' style="width: 100%;" />
 
                                      <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"><%# Eval("room_price") %>/Night</small>
                                  </div>
