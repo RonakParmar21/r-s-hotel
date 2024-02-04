@@ -38,7 +38,7 @@
                 <div class="row g-4">
 
                     <!-- using of data list -->
-                 <asp:DataList ID="dlRooms" runat="server" RepeatColumns="3" CssClass="row">
+                 <asp:DataList ID="dlRooms" runat="server" OnItemCommand="dlRooms_ItemCommand" RepeatColumns="3" CssClass="row">
                      <ItemTemplate>
                          <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                              <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
@@ -64,8 +64,11 @@
                                      </div>
                                      <p class="text-body mb-3"><%# Eval("room_description") %></p>
                                      <div class="d-flex justify-content-between">
-                                         <a class="btn btn-sm btn-primary rounded py-2 px-4" href="RoomDetails.aspx?RoomId=<%# Eval("room_id") %>">View Detail</a>
-                                         <a class="btn btn-sm btn-dark rounded py-2 px-4" href="BookRoom.aspx?RoomId=<%# Eval("room_id") %>">Book Now</a>
+                                         <asp:LinkButton ID="LinkButtonViewDetail" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="ViewDetail" CommandArgument='<%# Eval("room_id") %>'>View Detail</asp:LinkButton>
+                                         <asp:LinkButton ID="LinkButtonBookNow" runat="server" CssClass="btn btn-sm btn-dark rounded py-2 px-4" CommandName="BookNow" CommandArgument='<%# Eval("room_id") %>'>Book Now</asp:LinkButton>
+
+                                         <!--<a class="btn btn-sm btn-primary rounded py-2 px-4" href="roomDetails.aspx?id=<# Eval("room_id") %>">View Detail</a>
+                                         <a class="btn btn-sm btn-dark rounded py-2 px-4" href="rookRoom.aspx?RoomId=<# Eval("room_id") %>">Book Now</a>-->
                                      </div>
                                  </div>
                              </div>
@@ -309,7 +312,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+        <!--<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel py-5">
                     <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
@@ -347,12 +350,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Testimonial End -->
 
 
         <!-- Newsletter Start -->
-        <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container newsletter mt-5" style="width:100%;height:30px;">
+
+        </div>
+       <!-- <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="row justify-content-center">
                 <div class="col-lg-10 border rounded p-1">
                     <div class="border rounded text-center p-1">
@@ -366,7 +372,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Newsletter Start -->
          </div>
 

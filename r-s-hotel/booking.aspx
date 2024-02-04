@@ -52,6 +52,7 @@
                     <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <form>
+                                <center><p style="color:red;">Your name and email is only valid that give at the time of registration</p></center>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -67,19 +68,64 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating date" id="date3" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
-                                            <label for="checkin">Check In</label>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <asp:TextBox ID="mobile" pattern="[0-9]{10}" runat="server" class="form-control" placeholder="Your Mobile"></asp:TextBox>
+                                            <asp:Label runat="server" for="mobile" AssociatedControlID="mobile">Enter Your Mobile No</asp:Label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="mobile" ErrorMessage="Mobile no must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <asp:DropDownList ID="select1" class="form-select" runat="server">
+                                                <asp:ListItem Value="">Select Room Type</asp:ListItem>
+                                                <asp:ListItem Value="acs">AC Single</asp:ListItem>
+                                                <asp:ListItem Value="acd">AC Double</asp:ListItem>
+                                            </asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="categoryValidator" runat="server" ControlToValidate="select1"
+                                                InitialValue="" ErrorMessage="Select Room Type" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="select1" AssociatedControlID="select1">Enter Room Type</asp:Label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <asp:TextBox ID="roomqty" CssClass="form-select" runat="server"
+                                                placeholder="Enter Room Quantity" TextMode="Number" min="0"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="roomValidator" runat="server" ControlToValidate="roomqty"
+                                                InitialValue="" ErrorMessage="Room Quantity" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="roomqty" AssociatedControlID="roomqty">Enter Room Qty</asp:Label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date1">
+                                            <asp:TextBox ID="TextBox1" CssClass="form-control datetimepicker-input" placeholder="Check In" runat="server" TextMode="Date"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox1"
+                                                InitialValue="" ErrorMessage="Room Checkin Date" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="TextBox1" AssociatedControlID="TextBox1">Enter Checkin Date</asp:Label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date2">
+                                            <asp:TextBox ID="checkout" CssClass="form-control datetimepicker-input" placeholder="Check Out" runat="server" TextMode="Date"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="checkout"
+                                                InitialValue="" ErrorMessage="Room Checkout Date" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="checkout" AssociatedControlID="checkout">Enter Checkout Date</asp:Label>
+                                        </div>
+                                    </div>
+
+<!--                                    <div class="col-md-6">
                                         <div class="form-floating date" id="date4" data-target-input="nearest">
                                             <input type="text" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
                                             <label for="checkout">Check Out</label>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    </div>-->
+                                    <!--<div class="col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select" id="select1">
                                               <option value="1">Adult 1</option>
@@ -91,6 +137,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
+
                                             <select class="form-select" id="select2">
                                               <option value="1">Child 1</option>
                                               <option value="2">Child 2</option>
@@ -98,21 +145,41 @@
                                             </select>
                                             <label for="select2">Select Child</label>
                                           </div>
-                                    </div>
-                                    <div class="col-12">
+                                    </div>-->
+                                    <div class="col-6">
                                         <div class="form-floating">
-                                            <select class="form-select" id="select3">
-                                              <option value="1">Room 1</option>
-                                              <option value="2">Room 2</option>
-                                              <option value="3">Room 3</option>
-                                            </select>
-                                            <label for="select3">Select A Room</label>
+                                             <asp:TextBox ID="totalPerson" CssClass="form-select" runat="server"
+                                                placeholder="Enter Total Person" TextMode="Number" min="0"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="totalPerson"
+                                                InitialValue="" ErrorMessage="Total Person" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="totalPerson" AssociatedControlID="totalPerson">Enter Total Person</asp:Label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <asp:DropDownList ID="payment" class="form-select" runat="server">
+                                                <asp:ListItem Value="">Choose Payment Option</asp:ListItem>
+                                                <asp:ListItem Value="gPay">GPay</asp:ListItem>
+                                                <asp:ListItem Value="cod">Cash On Reach Hotel</asp:ListItem>
+                                            </asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="payment"
+                                                InitialValue="" ErrorMessage="Select Payment Method" ForeColor="Red" Display="Dynamic"
+                                                SetFocusOnError="True" />
+                                            <asp:Label runat="server" for="payment" AssociatedControlID="payment">Enter Payment Method</asp:Label>
                                           </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+
+                                            <asp:TextBox ID="request" runat="server" class="form-control" Rows="5" placeholder="Your Special Request" TextMode="MultiLine" style="height: 100px;"></asp:TextBox>
+                                            <asp:Label runat="server" for="request" AssociatedControlID="request">Enter Your Special Request</asp:Label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="request" ErrorMessage="Special Request must be required" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                                    <!--        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
                                             <label for="message">Special Request</label>
+
+                                        -->
                                         </div>
                                     </div>
                                     <div class="col-12">

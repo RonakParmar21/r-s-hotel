@@ -27,6 +27,38 @@ namespace r_s_hotel
 
         protected void dlRooms_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            if (e.CommandName == "ViewDetail")
+            {
+                int roomId = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect($"roomDetails.aspx?id={roomId}");
+            }
+            else if (e.CommandName == "BookNow")
+            {
+                int roomId = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect($"bookRoom.aspx?RoomId={roomId}");
+            }
+        }
+
+
+
+        /*protected void LinkButton_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "ViewDetail")
+            {
+                // Retrieve the ID (room_id) from the CommandArgument
+                string roomId = (string)e.CommandArgument;
+
+                // Now you can use roomId for further processing, like redirecting
+                Response.Redirect($"RoomDetails.aspx?RoomId={roomId}");
+            }
+        }
+*/
+
+
+
+        /*
+        protected void dlRooms_ItemCommand(object source, DataListCommandEventArgs e)
+        {
             if (e.CommandName == "SelectRoom")
             {
                 string roomId = e.CommandArgument.ToString();
@@ -42,7 +74,7 @@ namespace r_s_hotel
                 string roomId = e.CommandArgument.ToString();
                 // Redirect to booking page or handle booking logic
             }
-        }
+        }*/
 
 
         /*private void BindRoomData()
@@ -52,5 +84,7 @@ namespace r_s_hotel
             RepeaterRooms.DataSource = rooms;
             RepeaterRooms.DataBind();
         }*/
+
+
     }
 }
