@@ -13,7 +13,7 @@ namespace r_s_restaurent
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         string userName, userEmail, userMobile;
-        int userId;
+        //int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
             /*if(Session["user"] != null)
@@ -32,9 +32,25 @@ namespace r_s_restaurent
             }*/
             if (Session["user"] != null)
             {
-                int roomId = Convert.ToInt32(Request.QueryString["RoomId"]);
-
                 con.Open();
+                int roomId = Convert.ToInt32(Request.QueryString["RoomId"]);
+                string roomType = "";
+                string sqlQuery1 = "SELECT room_type FROM room WHERE room_id = @roomId";
+                using (SqlCommand cmdSelect = new SqlCommand(sqlQuery1, con))
+                {
+                    // Add the 'adminEmail' parameter to your command
+                    cmdSelect.Parameters.AddWithValue("@roomId", roomId);
+
+                    // Execute the command and attempt to convert the result to an integer
+                    object result = cmdSelect.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        roomType = result.ToString();
+                    }
+                }
+
+                
 
                 string sqlQuery = "SELECT * FROM [user] WHERE user_email = @userEmail";
 
@@ -49,11 +65,21 @@ namespace r_s_restaurent
                         if (reader.Read()) // If at least one row is returned
                         {
                             // Now, you can access each column by its name or index
-                            string userName = reader["user_name"].ToString(); // Example for name
-                            string userEmail = reader["user_email"].ToString(); // Example for email
+                            userName = reader["user_name"].ToString(); // Example for name
+                            userEmail = reader["user_email"].ToString(); // Example for email
+                            userMobile = reader["user_mobile"].ToString();
                                                                                 // Continue for other columns as needed
                             name.Text = userName;
                             email.Text = userEmail;
+                            mobile.Text = userMobile;
+                            select1.SelectedValue = roomType;
+                            TextBox1.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
+
+                            DateTime tomorrow = DateTime.Now.AddDays(1);
+                            checkout.Attributes["min"] = tomorrow.ToString("yyyy-MM-dd");
+
+
+
                             // Use these details as needed in your application
                             // For example, display them on the page or further process them
                         }
