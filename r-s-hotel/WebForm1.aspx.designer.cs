@@ -11,7 +11,7 @@ namespace r_s_hotel
 {
 
 
-    public partial class booking
+    public partial class WebForm1
     {
 
         /// <summary>
@@ -78,13 +78,13 @@ namespace r_s_hotel
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// roomTypeSelect control.
+        /// select1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList roomTypeSelect;
+        protected global::System.Web.UI.WebControls.DropDownList select1;
 
         /// <summary>
         /// categoryValidator control.
@@ -213,24 +213,6 @@ namespace r_s_hotel
         protected global::System.Web.UI.WebControls.TextBox tday;
 
         /// <summary>
-        /// lblTotalDays control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalDays;
-
-        /// <summary>
-        /// TextBoxDays control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDays;
-
-        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -238,5 +220,14 @@ namespace r_s_hotel
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// lblTotalDays control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalDays;
     }
 }

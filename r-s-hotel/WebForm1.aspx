@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="booking.aspx.cs" Inherits="r_s_hotel.booking" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="r_s_hotel.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">;
-     <div class="container-xxl bg-white p-0">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-xxl bg-white p-0">
         
         <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
@@ -20,16 +19,18 @@
                 </div>
             </div>
         </div>
+        <!-- Page Header End -->
 
 
-         <div class="container-xxl py-5">
+       
+
+        <!-- Booking Start -->
+        <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
                     <h1 class="mb-5">Book A <span class="text-primary text-uppercase">Luxury Room</span></h1>
                 </div>
-
-
                 <div class="row g-5">
                     <div class="col-lg-6">
                         <div class="row g-3">
@@ -47,16 +48,14 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
+                            <form id="bookForm">
                                 <center><p style="color:red;">Your name and email is only valid that give at the time of registration</p></center>
                                 <div class="row g-3">
-
                                     <div class="col-md-12">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="userI" runat="server" class="form-control" placeholder="Your Name" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox ID="userI" runat="server" class="form-control" placeholder="Your Name" TextMode="Number" Visible="false"></asp:TextBox>
                                         </div>
                                     </div>
 
@@ -74,7 +73,6 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-
                                     <div class="col-md-12">
                                         <div class="form-floating">
                                             <asp:TextBox ID="mobile" pattern="[0-9]{10}" runat="server" class="form-control" placeholder="Your Mobile"></asp:TextBox>
@@ -82,18 +80,18 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="mobile" ErrorMessage="Mobile no must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-
+                                    <!--
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <asp:DropDownList ID="roomTypeSelect" class="form-select" runat="server">
+                                            <asp:DropDownList ID="select1" class="form-select" runat="server">
                                                 <asp:ListItem Value="">Select Room Type</asp:ListItem>
                                                 <asp:ListItem Value="acs">AC Single</asp:ListItem>
                                                 <asp:ListItem Value="acd">AC Double</asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:RequiredFieldValidator ID="categoryValidator" runat="server" ControlToValidate="roomTypeSelect"
+                                            <asp:RequiredFieldValidator ID="categoryValidator" runat="server" ControlToValidate="select1"
                                                 InitialValue="" ErrorMessage="Select Room Type" ForeColor="Red" Display="Dynamic"
                                                 SetFocusOnError="True" />
-                                            <asp:Label runat="server" for="roomTypeSelect" AssociatedControlID="roomTypeSelect">Enter Room Type</asp:Label>
+                                            <asp:Label runat="server" for="select1" AssociatedControlID="select1">Enter Room Type</asp:Label>
                                           </div>
                                     </div>
                                     <div class="col-md-6">
@@ -106,7 +104,7 @@
                                             <asp:Label runat="server" for="roomqty" AssociatedControlID="roomqty">Enter Room Qty</asp:Label>
                                           </div>
                                     </div>
-
+                                    
                                     <div class="col-md-6">
                                         <div class="form-floating date" id="date1">
                                             <asp:TextBox ID="TextBox1" CssClass="form-control datetimepicker-input" placeholder="Check In" runat="server" TextMode="Date"></asp:TextBox>
@@ -125,9 +123,8 @@
                                                 SetFocusOnError="True" />
                                             <asp:Label runat="server" for="checkout" AssociatedControlID="checkout">Enter Checkout Date</asp:Label>
                                         </div>
-                                    </div>
-
-                                    <div class="col-6">
+                                    </div>-->
+                                   <!-- <div class="col-6">
                                         <div class="form-floating">
                                              <asp:TextBox ID="totalPerson" CssClass="form-select" runat="server"
                                                 placeholder="Enter Total Person" TextMode="Number" min="0"></asp:TextBox>
@@ -162,64 +159,69 @@
                                         <div class="form-floating">
                                             <asp:TextBox ID="tday" runat="server" class="form-control" placeholder="total days" TextMode="Number" Visible="false"></asp:TextBox>
                                         </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <asp:Label ID="lblTotalDays" runat="server"></asp:Label>
-                                    </div>
-                                    <div class="col-6">
-                                        <asp:TextBox ID="TextBoxDays" runat="server" Visible="false" TextMode="Number"></asp:TextBox>
-                                    </div>
+                                    </div>-->
                                     <div class="col-12" style="margin-top: 90px;">
                                         <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Book Now" OnClick="Button1_Click" />
                                         <!--<button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>-->
                                     </div>
-                                    
+                                    <asp:Label ID="lblTotalDays" runat="server"></asp:Label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Booking End -->
 
-                                    </div>
 
-                                <script type="text/javascript">
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        var textBox1 = document.getElementById('<%= TextBox1.ClientID %>');
-        var checkout = document.getElementById('<%= checkout.ClientID %>');
-        var textBoxDays = document.getElementById('<%= TextBoxDays.ClientID %>'); // Reference to your ASP.NET TextBox for displaying days difference
+        <!-- Newsletter Start -->
+        <!--<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 border rounded p-1">
+                    <div class="border rounded text-center p-1">
+                        <div class="bg-white rounded text-center p-5">
+                            <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Newsletter Start -->
+    </div>
 
-        // Set today's date as the minimum for textBox1
-        var today = new Date();
-        var formattedToday = today.toISOString().split('T')[0];
-        textBox1.min = formattedToday;
+    <br />
+    <br />
+    <br />
+    <br />
+    <br /><br />
 
-        textBox1.onchange = function () {
+   <!--<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var textBox1 = document.getElementById('<= TextBox1.ClientID %>');
+        var checkout = document.getElementById('<= checkout.ClientID %>');
+        
+        textBox1.onchange = function() {
             var selectedDate = new Date(this.value);
-            selectedDate.setDate(selectedDate.getDate() + 1); // Ensure checkout is at least the day after the selected date
+            selectedDate.setDate(selectedDate.getDate() + 1); // Ensure checkout is at least the day after next of TextBox1
             checkout.min = selectedDate.toISOString().split('T')[0];
         };
-
-        checkout.onchange = function () {
+        
+        checkout.onchange = function() {
             if (textBox1.value) {
                 var startDate = new Date(textBox1.value);
                 var endDate = new Date(this.value);
                 var timeDiff = endDate - startDate;
-                var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-                // Set the calculated days difference to the TextBoxDays ASP.NET control
-                textBoxDays.value = daysDiff.toString();
+                var daysDiff = timeDiff / (1000 * 3600 * 24);
+                //document.getElementById('= lblTotalDays.ClientID %>').innerText = 'Total Days: ' + daysDiff;
+                //document.getElementById('<= tday.ClientID %>').innerText = 'Total Days: ' + daysDiff;
             }
         };
     });
-                                </script>
+   </script>-->
 
-                                </form>
-                            </div>
-                        </div>
-                    
-
-
-
-                    </div>
-                </div>
-             </div>
-
-         </div>
-    <br /><br />
-    <br /><br />
 </asp:Content>

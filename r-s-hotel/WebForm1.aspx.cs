@@ -9,11 +9,16 @@ using System.Data.SqlClient;
 
 namespace r_s_hotel
 {
-    public partial class booking : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         string userName, userEmail, userMobile, roomType, srequest, pay;
-        int userId, roomId, roomPrice;
+        int userId, totalP, roomQty, roomId, roomPrice;
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] != null)
@@ -63,15 +68,12 @@ namespace r_s_hotel
                             email.Text = userEmail;
                             mobile.Text = userMobile;
                             userI.Text = userId.ToString();
+                            select1.SelectedValue = roomType;
 
-                            
-                            //roomTypeSelect.
-                            //select1.SelectedValue = roomType;
+                            TextBox1.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
 
-                            //TextBox1.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
-
-                            //DateTime tomorrow = DateTime.Now.AddDays(1);
-                            //checkout.Attributes["min"] = tomorrow.ToString("yyyy-MM-dd");
+                            DateTime tomorrow = DateTime.Now.AddDays(1);
+                            checkout.Attributes["min"] = tomorrow.ToString("yyyy-MM-dd");
                         }
                         else
                         {
@@ -85,18 +87,5 @@ namespace r_s_hotel
                 Response.Redirect("login.aspx");
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            /*roomQty = Convert.ToInt32(roo);
-            totalP = Convert.ToInt32(totalPerson.Text);
-            srequest = request.Text;
-            pay = payment.SelectedValue;*/
-            //int daysDiff = Convert.ToInt32(TextBoxDays.Text);
-            string daysDiff = TextBoxDays.Text;
-            //int daysDiff = Convert.ToInt32(TextBoxDays.Text);
-            Response.Redirect($"bookConfirm.aspx?totalRoom={daysDiff}&userId={userId}&userName={userName}&userEmail={userEmail}&userMobile={userMobile}&roomId={roomId}&roomType={roomType}");
-        }
-
     }
 }

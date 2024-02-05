@@ -9,15 +9,17 @@ using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
 using System.Web.Script.Serialization;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace r_s_hotel
 {
     public partial class newUser : System.Web.UI.Page
     {
-        string nm, em, pass, cpass, db, ge;
+        string nm, em, pass, cpass, db, ge, uem;
         int activationgcode;
-     
-        
+
+//        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,19 +34,48 @@ namespace r_s_hotel
             db = dob.Text;
             ge = gender.SelectedValue;
 
-            long mo = long.Parse(mobile.Text);
 
-            Random random = new Random();
-            activationgcode = random.Next(100000, 1000000);
-            
-            sendcode();
-            string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&g={ge}&rNo={activationgcode}&m={mo}";
+            string sqlQuery = "SELECT user_email FROM [user]";
+            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True"))
+            {
+                con.Open(); // Make sure to open the connection
 
-            Response.Redirect(targetUrl);
+                using (SqlCommand cmdSelect = new SqlCommand(sqlQuery, con))
+                {
+                    object result = cmdSelect.ExecuteScalar();
 
-            /*Response.Redirect($"verifyEmail.aspx?nm={n}");
-            Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
-            */
+                    if (result != null)
+                    {
+                        uem = result.ToString();
+                    }
+                }
+                // It's a good practice to close the connection here, but using statement will handle it as well
+            }
+
+            if (uem == em)
+            {
+
+                long mo = long.Parse(mobile.Text);
+
+                Random random = new Random();
+                activationgcode = random.Next(100000, 1000000);
+
+                sendcode();
+                string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&g={ge}&rNo={activationgcode}&m={mo}";
+
+                Response.Redirect(targetUrl);
+
+                /*Response.Redirect($"verifyEmail.aspx?nm={n}");
+                Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
+                */
+            }
+            else
+            {
+                Response.Write("<script>alert('Email Already Registered')</script>");
+            }
+
+
+
 
         }
 

@@ -77,9 +77,13 @@ namespace r_s_hotel
                     Response.Write("<script>alert('Registration Succsesfully..')</script>");
                     Response.Redirect("login.aspx");
                 }
-                else
+                else if(password != cpassword)
                 {
                     Response.Write("<script>alert('both password not matched...')</script>");
+                } 
+                else
+                {
+                    Response.Write("<h1>Email Already Register</h1><br/><br/>");
                 }
                 
                 /*Response.Write("<h1>Name is : " + name + "</h1><br /><br />");
@@ -92,9 +96,13 @@ namespace r_s_hotel
                 Response.Write("<h1>otp is : " + otp + "</h1><br /><br />");
                 */
             }
-            else
+            else if(random != otp)
             {
                 Response.Write("<h1>not done</h1><br/><br/>");
+            } 
+            else
+            {
+                Response.Write("<h1>Email Already Register</h1><br/><br/>");
             }
         }
     }

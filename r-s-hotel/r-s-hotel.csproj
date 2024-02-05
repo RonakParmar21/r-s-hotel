@@ -256,6 +256,7 @@
     <Content Include="admin\viewRoomDetails.aspx" />
     <Content Include="admin\viewStaffDetails.aspx" />
     <Content Include="admin\viewUserDetails.aspx" />
+    <Content Include="bookConfirm.aspx" />
     <Content Include="booking.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -317,6 +318,7 @@
     <Content Include="testimonial.aspx" />
     <Content Include="verifyEmail.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about.aspx.cs">
@@ -424,6 +426,13 @@
     <Compile Include="admin\viewUserDetails.aspx.designer.cs">
       <DependentUpon>viewUserDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bookConfirm.aspx.cs">
+      <DependentUpon>bookConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookConfirm.aspx.designer.cs">
+      <DependentUpon>bookConfirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="booking.aspx.cs">
       <DependentUpon>booking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -529,6 +538,13 @@
     </Compile>
     <Compile Include="verifyEmail.aspx.designer.cs">
       <DependentUpon>verifyEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
