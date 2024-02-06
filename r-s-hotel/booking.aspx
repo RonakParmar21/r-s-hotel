@@ -62,7 +62,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="name" runat="server" class="form-control" placeholder="Your Name"></asp:TextBox>
+                                            <asp:TextBox ID="name" runat="server" class="form-control" placeholder="Your Name" ReadOnly="true"></asp:TextBox>
                                             <asp:Label runat="server" for="name" AssociatedControlID="name">Enter Your Name</asp:Label>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="name" ErrorMessage="Name must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
@@ -99,7 +99,7 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <asp:TextBox ID="roomqty" CssClass="form-select" runat="server"
-                                                placeholder="Enter Room Quantity" TextMode="Number" min="0"></asp:TextBox>
+                                                placeholder="Enter Room Quantity" TextMode="Number" min="1" OnTextChanged="roomqty_TextChanged"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="roomValidator" runat="server" ControlToValidate="roomqty"
                                                 InitialValue="" ErrorMessage="Room Quantity" ForeColor="Red" Display="Dynamic"
                                                 SetFocusOnError="True" />
@@ -130,7 +130,7 @@
                                     <div class="col-6">
                                         <div class="form-floating">
                                              <asp:TextBox ID="totalPerson" CssClass="form-select" runat="server"
-                                                placeholder="Enter Total Person" TextMode="Number" min="0"></asp:TextBox>
+                                                placeholder="Enter Total Person" min="0"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="totalPerson"
                                                 InitialValue="" ErrorMessage="Total Person" ForeColor="Red" Display="Dynamic"
                                                 SetFocusOnError="True" />
@@ -164,10 +164,10 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <asp:Label ID="lblTotalDays" runat="server"></asp:Label>
+                                        <asp:Label ID="lblTotalDays" runat="server" Visible="false"></asp:Label>
                                     </div>
                                     <div class="col-6">
-                                        <asp:TextBox ID="TextBoxDays" runat="server" Visible="false" TextMode="Number"></asp:TextBox>
+                                        <asp:TextBox ID="TextBoxDays" runat="server" Visible="false"></asp:TextBox>
                                     </div>
                                     <div class="col-12" style="margin-top: 90px;">
                                         <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Book Now" OnClick="Button1_Click" />
@@ -180,32 +180,34 @@
                                 <script type="text/javascript">
                                     document.addEventListener("DOMContentLoaded", function () {
                                         var textBox1 = document.getElementById('<%= TextBox1.ClientID %>');
-        var checkout = document.getElementById('<%= checkout.ClientID %>');
-        var textBoxDays = document.getElementById('<%= TextBoxDays.ClientID %>'); // Reference to your ASP.NET TextBox for displaying days difference
+                                        var checkout = document.getElementById('<%= checkout.ClientID %>');
+                                        var textBoxDays = document.getElementById('<%= TextBoxDays.ClientID %>'); // Reference to your ASP.NET TextBox for displaying days difference
 
-        // Set today's date as the minimum for textBox1
-        var today = new Date();
-        var formattedToday = today.toISOString().split('T')[0];
-        textBox1.min = formattedToday;
+                                        // Set today's date as the minimum for textBox1
+                                        var today = new Date();
+                                        var formattedToday = today.toISOString().split('T')[0];
+                                        textBox1.min = formattedToday;
 
-        textBox1.onchange = function () {
-            var selectedDate = new Date(this.value);
-            selectedDate.setDate(selectedDate.getDate() + 1); // Ensure checkout is at least the day after the selected date
-            checkout.min = selectedDate.toISOString().split('T')[0];
-        };
+                                        textBox1.onchange = function () {
+                                            var selectedDate = new Date(this.value);
+                                            selectedDate.setDate(selectedDate.getDate() + 1); // Ensure checkout is at least the day after the selected date
+                                            checkout.min = selectedDate.toISOString().split('T')[0];
+                                        };
 
-        checkout.onchange = function () {
-            if (textBox1.value) {
-                var startDate = new Date(textBox1.value);
-                var endDate = new Date(this.value);
-                var timeDiff = endDate - startDate;
-                var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                                        checkout.onchange = function () {
+                                            if (textBox1.value) {
+                                                var startDate = new Date(textBox1.value);
+                                                var endDate = new Date(this.value);
+                                                var timeDiff = endDate - startDate;
+                                                var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-                // Set the calculated days difference to the TextBoxDays ASP.NET control
-                textBoxDays.value = daysDiff.toString();
-            }
-        };
-    });
+                                                // Set the calculated days difference to the TextBoxDays ASP.NET control
+                                                textBoxDays.value = daysDiff.toString();
+                                                document.getElementById('<%= TextBoxDays.ClientID %>').innerText = 'Total Days: ' + daysDiff;
+                                                console.log("Difference " + daysDiff);
+                                            }
+                                        };
+                                    });
                                 </script>
 
                                 </form>
