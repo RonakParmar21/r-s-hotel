@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Your Email"></asp:TextBox>
+                                            <asp:TextBox ID="email" runat="server" class="form-control" placeholder="Your Email" ReadOnly="true"></asp:TextBox>
                                             <asp:Label runat="server" for="email" AssociatedControlID="email">Enter Your Email</asp:Label>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="email" ErrorMessage="Email must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
@@ -77,7 +77,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="mobile" pattern="[0-9]{10}" runat="server" class="form-control" placeholder="Your Mobile"></asp:TextBox>
+                                            <asp:TextBox ID="mobile" pattern="[0-9]{10}" runat="server" class="form-control" ReadOnly="true" placeholder="Your Mobile"></asp:TextBox>
                                             <asp:Label runat="server" for="mobile" AssociatedControlID="mobile">Enter Your Mobile No</asp:Label>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="mobile" ErrorMessage="Mobile no must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
@@ -99,7 +99,7 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <asp:TextBox ID="roomqty" CssClass="form-select" runat="server"
-                                                placeholder="Enter Room Quantity" TextMode="Number" min="1" OnTextChanged="roomqty_TextChanged"></asp:TextBox>
+                                                placeholder="Enter Room Quantity" TextMode="Number" min="1" OnTextChanged="roomqty_TextChanged" AutoPostBack="true"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="roomValidator" runat="server" ControlToValidate="roomqty"
                                                 InitialValue="" ErrorMessage="Room Quantity" ForeColor="Red" Display="Dynamic"
                                                 SetFocusOnError="True" />
@@ -129,7 +129,7 @@
 
                                     <div class="col-6">
                                         <div class="form-floating">
-                                             <asp:TextBox ID="totalPerson" CssClass="form-select" runat="server"
+                                             <asp:TextBox ID="totalPerson" ReadOnly="true" CssClass="form-select" runat="server"
                                                 placeholder="Enter Total Person" min="0"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="totalPerson"
                                                 InitialValue="" ErrorMessage="Total Person" ForeColor="Red" Display="Dynamic"
@@ -171,7 +171,7 @@
                                     </div>
                                     <div class="col-12" style="margin-top: 90px;">
                                         <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Book Now" OnClick="Button1_Click" />
-                                        <!--<button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>-->
+
                                     </div>
                                     
 
@@ -203,14 +203,20 @@
 
                                                 // Set the calculated days difference to the TextBoxDays ASP.NET control
                                                 textBoxDays.value = daysDiff.toString();
-                                                document.getElementById('<%= TextBoxDays.ClientID %>').innerText = 'Total Days: ' + daysDiff;
+                                                document.getElementById('<%= TextBoxDays.ClientID %>').innerText='Total Days: '+daysDiff;
                                                 console.log("Difference " + daysDiff);
                                             }
                                         };
-                                    });
+
+                                                    
+                                                    
+                                                    });
                                 </script>
 
+                            
                                 </form>
+
+
                             </div>
                         </div>
                     
