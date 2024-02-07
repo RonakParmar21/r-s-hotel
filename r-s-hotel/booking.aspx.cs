@@ -13,6 +13,12 @@ namespace r_s_hotel
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True");
         string userName, userEmail, userMobile, roomType, srequest, pay, daysDiff;
+        TimeSpan totalDuration;
+        protected void tday_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         int userId, roomId, roomPrice, tperson;
         protected void roomqty_TextChanged(object sender, EventArgs e)
         {
@@ -47,13 +53,16 @@ namespace r_s_hotel
                     if (result != null)
                     {
                         roomType = result.ToString();
+                        roomTypeSelect.SelectedValue = roomType;
+                        roomTypeSelect.Enabled = false;
+                        //roomTypeSelect.Text = roomType.ToString();
                     }
                 }
 
-                string sqlQuery2 = "SELECT room_price FROM room WHERE room_id = @roomId1";
+                string sqlQuery2 = "SELECT room_price FROM room WHERE room_id = @roomId";
                 using (SqlCommand cmdSelect = new SqlCommand(sqlQuery2, con))
                 { 
-                    cmdSelect.Parameters.AddWithValue("@roomId1", roomId);
+                    cmdSelect.Parameters.AddWithValue("@roomId", roomId);
                     object result1 = cmdSelect.ExecuteScalar();
                     if (result1 != null)
                     {
@@ -154,9 +163,47 @@ namespace r_s_hotel
             {
                 tperson = troom * 2;
             }
-            //totalPerson.Text = tperson.ToString();
+           
             totalPerson.Text = tperson.ToString();
-            Response.Redirect($"bookConfirm.aspx?totalDays={daysDiff}&userId={userId}&userName={userName}&userEmail={userEmail}&userMobile={userMobile}&roomId={roomId}&roomType={roomType}&checkIn={cin}&checkOut={cout}&tp={tperson}");
+
+            if (!string.IsNullOrWhiteSpace(TextBox1.Text) && !string.IsNullOrWhiteSpace(checkout.Text))
+            {
+                DateTime checkInDate;
+                DateTime checkOutDate;
+
+                // Try to parse the dates from the text boxes
+                bool isCheckInDateValid = DateTime.TryParse(TextBox1.Text, out checkInDate);
+                bool isCheckOutDateValid = DateTime.TryParse(checkout.Text, out checkOutDate);
+
+                // Proceed if both dates are valid
+                if (isCheckInDateValid && isCheckOutDateValid)
+                {
+                    // Ensure the check-out date is after the check-in date
+                    if (checkOutDate > checkInDate)
+                    {
+                        totalDuration = checkOutDate.Subtract(checkInDate);
+
+                        // Display the total number of days
+                        tday.Text = $"{totalDuration.Days}";
+                    }
+                    else
+                    {
+                        lblTotalDays.Text = "Check-out date must be after the check-in date.";
+                    }
+                }
+                else
+                {
+                    lblTotalDays.Text = "Please enter valid dates.";
+                }
+            }
+            else
+            {
+                lblTotalDays.Text = "Please enter both check-in and check-out dates.";
+            }
+        
+
+
+        Response.Redirect($"bookConfirm.aspx?totalDays={tday.Text}&userId={userId}&userName={userName}&userEmail={userEmail}&userMobile={userMobile}&roomId={roomId}&roomType={roomType}&checkIn={cin}&checkOut={cout}&tp={tperson}&roomqt={Convert.ToInt32(roomqty.Text)}&pm={payment.SelectedValue}&re={request.Text}&rp={roomPrice}");
         }
 
     }

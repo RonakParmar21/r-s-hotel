@@ -158,20 +158,20 @@
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="request" ErrorMessage="Special Request must be required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-12" style="margin-top:90px;">
                                         <div class="form-floating">
-                                            <asp:TextBox ID="tday" runat="server" class="form-control" placeholder="total days" TextMode="Number" Visible="false"></asp:TextBox>
+                                            <asp:TextBox ID="tday" runat="server" class="form-control" placeholder="total days" TextMode="Number" Visible="true" ReadOnly="true" OnTextChanged="tday_TextChanged" AutoPostBack="true"></asp:TextBox>
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="col-6">
                                         <asp:Label ID="lblTotalDays" runat="server" Visible="false"></asp:Label>
                                     </div>
                                     <div class="col-6">
                                         <asp:TextBox ID="TextBoxDays" runat="server" Visible="false"></asp:TextBox>
-                                    </div>
+                                    </div>-->
                                     <div class="col-12" style="margin-top: 90px;">
                                         <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Book Now" OnClick="Button1_Click" />
-
                                     </div>
                                     
 
@@ -201,10 +201,13 @@
                                                 var timeDiff = endDate - startDate;
                                                 var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-                                                // Set the calculated days difference to the TextBoxDays ASP.NET control
-                                                textBoxDays.value = daysDiff.toString();
-                                                document.getElementById('<%= TextBoxDays.ClientID %>').innerText='Total Days: '+daysDiff;
+                                                document.getElementById('<%= tday.ClientID %>').innerText = 'Total Days: ' + daysDiff;
                                                 console.log("Difference " + daysDiff);
+
+                                                // Set the calculated days difference to the TextBoxDays ASP.NET control
+                                                //textBoxDays.value = daysDiff.toString();
+                                                //document.getElementById('<== TextBoxDays.ClientID %>').innerText='Total Days: '+daysDiff;
+                                                //console.log("Difference " + daysDiff);
                                             }
                                         };
 
