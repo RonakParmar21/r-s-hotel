@@ -192,15 +192,19 @@
                         </div>
 
                         <div style="display: flex;">
-                            <h6>Room Status : </h6><h6 style="color: darkred"><%#Eval("room_status") %></h6>
+                            <h6>Room Status : </h6>
+                            <!--<h6 style="color: darkred"><Eval("room_status") %></h6>-->
+                            <%# Convert.ToInt32(Eval("room_total")) == 0 ? "Not Available" : "Available" %>
                         </div>
                     </div>
                     <!-- Description -->
 
                     <!-- button -->
+                    
                     <div>
-                        <asp:LinkButton ID="LinkButtonViewDetail" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="BookNow" CommandArgument='<%# Eval("room_id") %>'>Book Now</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonViewDetail" runat="server" Visible='<%# Convert.ToInt32(Eval("room_total")) != 0 %>' CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="BookNow" CommandArgument='<%# Eval("room_id") %>'>Book Now</asp:LinkButton>
                     </div>
+
                 </div>
             </section>
 

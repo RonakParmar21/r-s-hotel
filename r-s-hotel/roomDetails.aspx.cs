@@ -26,7 +26,15 @@ namespace r_s_hotel
                 SqlCommand cmd = new SqlCommand("select * from room where room_id='"+roomId+"'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
 
-
+                /*if(dr.Read())
+                {
+                    int rt = Convert.ToInt32(dr["room_total"]);
+                    if(rt==0)
+                    {
+                        
+                    }
+                }
+                */
                 dlRooms.DataSource = dr;
                 dlRooms.DataBind();
 
