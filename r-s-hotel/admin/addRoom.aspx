@@ -139,8 +139,8 @@
                         <div class="form-group d-flex fg">
                             <label for="name" class="col-sm-3 control-label text-start h4">Total Room</label>
                             <div class="col-sm-9">
-                                <asp:TextBox ID="roomTotal" pattern="[0-9]" CssClass="form-control fc" runat="server"
-                                    placeholder="Enter Total Room" MaxLength="15"></asp:TextBox>
+                                <asp:TextBox ID="roomTotal" CssClass="form-control fc" runat="server"
+                                    placeholder="Enter Total Room" TextMode="Number"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="roomTotal"
                                     ErrorMessage="Enter Total Room" ForeColor="Red" Display="Dynamic" SetFocusOnError="True">
                                 </asp:RequiredFieldValidator>

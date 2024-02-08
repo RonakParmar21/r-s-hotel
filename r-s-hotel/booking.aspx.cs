@@ -35,6 +35,60 @@ namespace r_s_hotel
                 tperson = troom * 2;
             }
 
+            /*string sqlQuery2 = "SELECT room_total FROM room WHERE room_id = @roomId";
+            using (SqlCommand cmdSelect = new SqlCommand(sqlQuery2, con))
+            {
+                cmdSelect.Parameters.AddWithValue("@roomId", roomId);
+                object result1 = cmdSelect.ExecuteScalar();
+                if (Convert.ToInt32(roomqty.Text) >= result1)
+                {
+                    Response.Write("<script>alert('Room Not Available')</script>");
+                }
+            }*/
+            string sqlQuery2 = "SELECT room_total FROM room WHERE room_id = @roomId";
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-505DFRT;Initial Catalog=rshotel;Integrated Security=True")) // Make sure you have a valid connection string
+            {
+                con.Open(); // Open the connection
+
+                using (SqlCommand cmdSelect = new SqlCommand(sqlQuery2, con))
+                {
+                    cmdSelect.Parameters.AddWithValue("@roomId", roomId);
+
+                    // ExecuteScalar returns the first column of the first row in the result set
+                    object resultObj = cmdSelect.ExecuteScalar();
+
+                    // Check if resultObj is not null
+                    if (resultObj != null)
+                    {
+                        int result1 = Convert.ToInt32(resultObj); // Convert the result to integer
+
+                        // Assuming roomqty.Text is a string that can be converted to an integer
+                        int requestedQuantity;
+                        bool isNumeric = int.TryParse(roomqty.Text, out requestedQuantity);
+
+                        // Check if roomqty.Text is a valid integer and compare it
+                        if (isNumeric && requestedQuantity > result1)
+                        {
+                            // Room not available
+                            Response.Write("<script>alert('Room Not Available')</script>");
+                            roomqty.Text = "";
+                        }
+                        else
+                        {
+                            // Room available or invalid input in roomqty.Text
+                            // Handle accordingly
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where the query returns null (e.g., invalid room_id)
+                    }
+                }
+
+                con.Close(); // It's good practice to explicitly close your connection
+            }
+
+
             totalPerson.Text = tperson.ToString();
         }
 
