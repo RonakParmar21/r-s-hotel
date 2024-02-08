@@ -253,6 +253,7 @@
     <Content Include="admin\login.aspx" />
     <Content Include="admin\vefiryStaff.aspx" />
     <Content Include="admin\verify.aspx" />
+    <Content Include="admin\viewBookingDetails.aspx" />
     <Content Include="admin\viewRoomDetails.aspx" />
     <Content Include="admin\viewStaffDetails.aspx" />
     <Content Include="admin\viewUserDetails.aspx" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="admin\verify.aspx.designer.cs">
       <DependentUpon>verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\viewBookingDetails.aspx.cs">
+      <DependentUpon>viewBookingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\viewBookingDetails.aspx.designer.cs">
+      <DependentUpon>viewBookingDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\viewRoomDetails.aspx.cs">
       <DependentUpon>viewRoomDetails.aspx</DependentUpon>
