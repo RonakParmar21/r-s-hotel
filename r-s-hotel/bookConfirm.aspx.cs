@@ -165,6 +165,8 @@ VALUES(@uid, @rid, @cin, @cout, @tday, @totalPrice, @roomqty, @rtype, @payment, 
                 con.Close();
             }
 
+            Response.Redirect("default.aspx");
+
         }
     }
 }
