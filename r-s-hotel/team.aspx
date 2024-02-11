@@ -23,7 +23,7 @@
 
 
        
-        <!-- Team Start -->
+        <!-- Team Start
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -162,10 +162,44 @@
                 </div>
             </div>
         </div>
-        <!-- Team End -->
+        <- Team End -->
+          <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
+                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
+                </div>                
+                <div class="row g-4">
+                    <asp:DataList ID="DataList2" runat="server" RepeatColumns="3" CssClass="row">
+                        <ItemTemplate>
+                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                             <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
+                                 <div class="position-relative">
+
+                                        <asp:Image ID="Image2" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("staff_img") %>' Style="width: 100%;" />
+                                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink4" runat="server"><i class="fab fa-facebook-f"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink1" runat="server"><i class="fab fa-twitter"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink2" runat="server"><i class="fab fa-instagram"></i></asp:HyperLink>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4 mt-3">
+                                        <h5 class="fw-bold mb-0" style="text-transform:uppercase;"><%# Eval("staff_name") %></h5>
+                                        <small style="text-transform: uppercase;"><%# Eval("staff_possition") %></small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
 
 
-        <!-- Newsletter Start -->
+            </div>
+        </div>
+
+
+        <!-- Newsletter Start
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="row justify-content-center">
                 <div class="col-lg-10 border rounded p-1">
@@ -181,7 +215,10 @@
                 </div>
             </div>
         </div>
-        <!-- Newsletter Start -->
+        <!- Newsletter Start -->
         </div>
+    <div style="margin-top: 150px;">
+
+    </div>
 
 </asp:Content>

@@ -132,6 +132,15 @@ namespace r_s_hotel.admin
         protected global::System.Web.UI.WebControls.HyperLink viewStaff;
 
         /// <summary>
+        /// viewBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink viewBooking;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

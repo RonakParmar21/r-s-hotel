@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-
+    
     <!--<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">-->
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
@@ -232,6 +232,12 @@
                                                     <asp:HyperLink ID="viewStaff"
                                                         CssClass="dropdown-item x-large" runat="server"
                                                         NavigateUrl="~/admin/viewStaffDetails.aspx" Visible="true">Staff Details
+                                                    </asp:HyperLink>
+                                                </li>
+                                                <li class=" ">
+                                                    <asp:HyperLink ID="viewBooking"
+                                                        CssClass="dropdown-item x-large" runat="server"
+                                                        NavigateUrl="~/admin/viewBookingDetails.aspx" Visible="true">Booking Details
                                                     </asp:HyperLink>
                                                 </li>
                                             </ul>

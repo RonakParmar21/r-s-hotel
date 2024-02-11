@@ -61,7 +61,7 @@ namespace r_s_hotel.admin
             img2.Dispose();
             img3.Dispose();*/
 
-            Response.Write("<script>alert('Product Add Succsesfully..')</script>");
+            Response.Write("<script>alert('Room Add Succsesfully..')</script>");
            
         }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="r_s_restaurent._default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="default.aspx.cs" Inherits="r_s_restaurent._default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -78,6 +78,10 @@
                             </div>
                         </div>
                         <div class="col-md-2">
+
+
+
+
                             <button class="btn btn-primary w-100">Submit</button>
                         </div>
                     </div>
@@ -93,14 +97,20 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
-                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Hotelier</span></h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">R&S Hotel</span></h1>
+                        <p class="mb-4">
+                            We strive to make the lives of our patrons easier by multiplying revenue channels and using our technological expertise to maximize demand.
+
+                        </p>
                         <div class="row g-3 pb-4">
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="border rounded p-1">
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+
+                                        <h2>
+                                            <asp:Label ID="roomCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
                                         <p class="mb-0">Rooms</p>
                                     </div>
                                 </div>
@@ -108,8 +118,11 @@
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
                                 <div class="border rounded p-1">
                                     <div class="border rounded text-center p-4">
+
                                         <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <h2>
+                                            <asp:Label ID="staffCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
                                         <p class="mb-0">Staffs</p>
                                     </div>
                                 </div>
@@ -118,13 +131,17 @@
                                 <div class="border rounded p-1">
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <h2>
+                                            <asp:Label ID="clientCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
                                         <p class="mb-0">Clients</p>
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
+                        <asp:Button ID="Button1" runat="server" class="btn btn-primary py-3 px-5 mt-2" Text="Explore More" OnClick="Button1_Click" />
                     </div>
                     <div class="col-lg-6">
                         <div class="row g-3">
@@ -153,106 +170,49 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
-                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
+                    <h1 class="mb-5">Explore Our<span class="text-primary text-uppercase">Rooms</span></h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-1.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Junior Suite</h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
+                    <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" CssClass="row" OnItemCommand="DataList1_ItemCommand">
+                        <ItemTemplate>
+                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
+                                    <div class="position-relative">
+                                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("room_img") %>' Style="width: 100%;" />
+                                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"><%# Eval("room_price") %>/Night</small>
+                                    </div>
+                                    <div class="p-4 mt-2">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <h5 class="mb-0"><%# Eval("room_type") %></h5>
+                                            <div class="ps-2">
+                                                <!-- Dynamically generate star ratings based on data -->
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i><%# Eval("room_capacity") %> Bed</small>
+                                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i><%# Eval("room_capacity") %> Bath</small>
+                                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                                        </div>
+                                        <p class="text-body mb-3"><%# Eval("room_description") %></p>
+                                        <div class="d-flex justify-content-between">
+                                           
+                                            <!--<asp:HyperLink ID="LinkButtonViewDetail" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandArgument='# Eval("room_id") %>' CommandNName="ViewDetails">View Details</asp:HyperLink>-->
+                                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="ViewDetail" CommandArgument='<%# Eval("room_id") %>' style="width: 100%;">View Detail</asp:LinkButton>
+                                         <!--<asp:LinkButton ID="LinkButtonBookNow" runat="server" CssClass="btn btn-sm btn-dark rounded py-2 px-4" CommandName="BookNow" CommandArgument='# Eval("room_id") %>'>Book Now</asp:LinkButton>-->
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-2.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Executive Suite</h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                    </div>
-                                </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-3.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Super Deluxe</h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                    </div>
-                                </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+               </div>
             </div>
         </div>
         <!-- Room End -->
 
 
-        <!-- Video Start -->
+        <!-- Video Start >
         <div class="container-xxl py-5 px-0 wow zoomIn" data-wow-delay="0.1s">
             <div class="row g-0">
                 <div class="col-md-6 bg-dark d-flex align-items-center">
@@ -282,7 +242,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
+                        <!-- 16:9 aspect ratio -
                         <div class="ratio ratio-16x9">
                             <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
                                 allow="autoplay"></iframe>
@@ -291,7 +251,7 @@
                 </div>
             </div>
         </div>
-        <!-- Video Start -->
+        <- Video Start -->
 
 
         <!-- Service Start -->
@@ -324,7 +284,7 @@
                             <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <!--<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <a class="service-item rounded" href="">
                             <div class="service-icon bg-transparent border rounded p-1">
                                 <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
@@ -334,7 +294,7 @@
                             <h5 class="mb-3">Spa & Fitness</h5>
                             <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         </a>
-                    </div>
+                    </div>-->
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
                         <a class="service-item rounded" href="">
                             <div class="service-icon bg-transparent border rounded p-1">
@@ -346,7 +306,7 @@
                             <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                   <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <a class="service-item rounded" href="">
                             <div class="service-icon bg-transparent border rounded p-1">
                                 <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
@@ -367,14 +327,14 @@
                             <h5 class="mb-3">GYM & Yoga</h5>
                             <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
         <!-- Service End -->
 
 
-        <!-- Testimonial Start -->
+        <!-- Testimonial Start
         <div class="container-xxl testimonial my-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel py-5">
@@ -414,7 +374,7 @@
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+        Testimonial End -->
 
 
         <!-- Team Start -->
@@ -423,73 +383,33 @@
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
-                </div>
+                </div>                
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    <asp:DataList ID="DataList2" runat="server" RepeatColumns="3" CssClass="row">
+                        <ItemTemplate>
+                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                             <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
+                                 <div class="position-relative">
+
+                                        <asp:Image ID="Image2" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("staff_img") %>' Style="width: 100%;" />
+                                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink4" runat="server"><i class="fab fa-facebook-f"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink1" runat="server"><i class="fab fa-twitter"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink2" runat="server"><i class="fab fa-instagram"></i></asp:HyperLink>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4 mt-3">
+                                        <h5 class="fw-bold mb-0" style="text-transform:uppercase;"><%# Eval("staff_name") %></h5>
+                                        <small style="text-transform: uppercase;"><%# Eval("staff_possition") %></small>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
+
+                        </ItemTemplate>
+                    </asp:DataList>
                 </div>
+
+
             </div>
         </div>
         <!-- Team End -->

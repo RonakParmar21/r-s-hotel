@@ -113,6 +113,7 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     <!--<asp:Button ID="btnDelete" runat="server" CommandArgument='# Bind("book_id") + Bind("room_total") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnUpdate_Command" />-->
+
                     <asp:Button ID="btnUpdate" runat="server" CommandArgument='<%# Eval("book_id") + "|" + Eval("room_id") + "|" + Eval("book_totalroom")%>' Text="Delete" CssClass="btn btn-danger" OnCommand="btnUpdate_Command" />
 
                 </ItemTemplate>

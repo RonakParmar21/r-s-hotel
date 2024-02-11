@@ -14,6 +14,7 @@ namespace r_s_hotel.admin
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
+        int bookId, roomId, roomTotal;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -50,9 +51,9 @@ namespace r_s_hotel.admin
             if (args.Length == 3)
             {
                 // Safely try to parse the arguments to their respective types
-                int bookId = int.Parse(args[0]);
-                int roomId = int.Parse(args[1]); 
-                int roomTotal = int.Parse(args[2]);
+                bookId = int.Parse(args[0]);
+                roomId = int.Parse(args[1]); 
+                roomTotal = int.Parse(args[2]);
 
                 // Now you have the separate parameters and can use them as needed
                 // For example, calling a method that needs these parameters
@@ -78,15 +79,47 @@ namespace r_s_hotel.admin
                     int rq = int.Parse(roomQ);
                     int t = roomTotal+rq;
 
-                    SqlCommand cmd = new SqlCommand("UPDATE room SET room_total = @TotalRoom WHERE room_id = @Id", con);
-                    cmd.Parameters.AddWithValue("@TotalRoom", t);
+                    SqlCommand cmd = new SqlCommand("SELECT book_id, user_id, room_id, book_checkin_date, book_checkout_date, book_totalday, book_totalprice, book_totalroom, book_roomtype, book_paymentstatus, book_total_person, book_status, book_special_request, book_time FROM book WHERE room_id = @Id", con);
                     cmd.Parameters.AddWithValue("@Id", roomId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    int book_id = Convert.ToInt32(reader["book_id"]);
+                    int user_id = Convert.ToInt32(reader["user_id"]);
+                    int room_id = Convert.ToInt32(reader["room_id"]);
+                    string checkin = reader.IsDBNull(reader.GetOrdinal("book_checkin_date")) ? string.Empty : reader.GetDateTime(reader.GetOrdinal("book_checkin_date")).ToString("yyyy-MM-dd");
+                    string checkout = reader.IsDBNull(reader.GetOrdinal("book_checkout_date")) ? string.Empty : reader.GetDateTime(reader.GetOrdinal("book_checkout_date")).ToString("yyyy-MM-dd");
+
+                    //string checkin = reader["book_checkin_date"].ToString();
+                    //string checkout = reader["book_checkout_date"].ToString();
+                    int totalday = Convert.ToInt32(reader["book_totalday"]);
+                    int tprice = Convert.ToInt32(reader["book_totalprice"]);
+                    int troom = Convert.ToInt32(reader["book_totalroom"]);
+                    string roomtype = reader["book_roomtype"].ToString();
+                    string paymentstatus = reader["book_paymentstatus"].ToString();
+                    string tperson = reader["book_total_person"].ToString();
+                    string status = reader["book_status"].ToString();
+                    string specialreq = reader["book_special_request"].ToString();
+
+                    SqlCommand cmd1 = new SqlCommand("insert into tempbook(book_id, user_id, room_id, checkin, checkout, totalday, totalprice, totalroom, roomtype, paymentstatus, totalperson, status, specialrequest) values('" + book_id + "','" + user_id + "','" + room_id+ "','" + checkin+ "','" + checkout+ "','" + totalday+ "','" + tprice+ "','" + troom +"','" + roomtype + "','"+paymentstatus+"','"+tperson+"','"+status+"','"+specialreq+"')", con);
+                    reader.Close();
+                    cmd1.ExecuteNonQuery();
+
+                    //SqlCommand cmd2 = new SqlCommand("DELETE FROM room WHERE room_id = @Id", con);
+                    SqlCommand cmd2 = new SqlCommand("UPDATE room SET room_total = @TotalRoom WHERE room_id = @Id", con);
+                    cmd2.Parameters.AddWithValue("@TotalRoom", t);
+                    cmd2.Parameters.AddWithValue("@Id", roomId);
+
+
 
                     //cmd.ExecuteNonQuery();
        
-                    cmd.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
 
+                    SqlCommand cmd3 = new SqlCommand("DELETE FROM book WHERE book_id = @Id", con);
+                    cmd3.Parameters.AddWithValue("@Id", bookId);
+                    cmd3.ExecuteNonQuery();
 
+                    Response.Redirect("viewBookingDetails.aspx");
                 }
             }
 
@@ -105,6 +138,13 @@ namespace r_s_hotel.admin
 
         }
 
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            con.Close();
+            con.Open();
+
+            
+        }
 
         /*public void deleteRecord(int Id, int TotalRoom)
 {

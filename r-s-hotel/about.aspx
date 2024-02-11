@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="about.aspx.cs" Inherits="r_s_restaurent.about" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master"  AutoEventWireup="true" CodeBehind="about.aspx.cs" Inherits="r_s_restaurent.about" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -24,9 +24,77 @@
 
 
        
+          <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
+                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">R&S Hotel</span></h1>
+                        <p class="mb-4">
+                            We strive to make the lives of our patrons easier by multiplying revenue channels and using our technological expertise to maximize demand.
+
+                        </p>
+                        <div class="row g-3 pb-4">
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
+
+                                        <h2>
+                                            <asp:Label ID="roomCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
+                                        <p class="mb-0">Rooms</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+
+                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                                        <h2>
+                                            <asp:Label ID="staffCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
+                                        <p class="mb-0">Staffs</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="border rounded p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                        <h2>
+                                            <asp:Label ID="clientCount" runat="server" Text="" class="mb-1" data-toggle="counter-up"></asp:Label>
+                                        </h2>
+                                        <p class="mb-0">Clients</p>
+                                    </div>
+                                </div>
+                            </div>
 
 
-        <!-- About Start -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" style="margin-top: 25%;">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Start -
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -84,10 +152,45 @@
                 </div>
             </div>
         </div>
-        <!-- About End -->
+        < About End -->
 
 
-        <!-- Team Start -->
+          <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
+                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
+                </div>                
+                <div class="row g-4">
+                    <asp:DataList ID="DataList2" runat="server" RepeatColumns="3" CssClass="row">
+                        <ItemTemplate>
+                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                             <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
+                                 <div class="position-relative">
+
+                                        <asp:Image ID="Image2" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("staff_img") %>' Style="width: 100%;" />
+                                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink4" runat="server"><i class="fab fa-facebook-f"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink1" runat="server"><i class="fab fa-twitter"></i></asp:HyperLink>
+                                            <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink2" runat="server"><i class="fab fa-instagram"></i></asp:HyperLink>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4 mt-3">
+                                        <h5 class="fw-bold mb-0" style="text-transform:uppercase;"><%# Eval("staff_name") %></h5>
+                                        <small style="text-transform: uppercase;"><%# Eval("staff_possition") %></small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Team Start
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -162,7 +265,7 @@
                 </div>
             </div>
         </div>
-        <!-- Team End -->
+ Team End -->
 
 
         <!-- Newsletter Start -->
