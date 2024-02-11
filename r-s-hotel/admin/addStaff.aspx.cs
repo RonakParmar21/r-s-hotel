@@ -13,7 +13,7 @@ namespace r_s_hotel.admin
 {
     public partial class addStaff : System.Web.UI.Page
     {
-        string nm, em, db, ge, pos, sl, add, joindate, lem;
+        string nm, em, db, ge, pos, sl, add, joindate, lem, simg;
         int activationgcode;
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
@@ -45,6 +45,7 @@ namespace r_s_hotel.admin
             sl = salary.Text;
             add = address.Text;
             joindate = TextBox1.Text;
+            simg = img1.FileName;
 
 
             Random random = new Random();
@@ -52,8 +53,12 @@ namespace r_s_hotel.admin
             
             sendcode();
             //string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&rNo={activationgcode}&m={mo}";
-            string targetUrl = $"vefiryStaff.aspx?n={nm}&e={em}&m={mo}&d={db}&g={ge}&pos={pos}&sl={sl}&ad={add}&rNo={activationgcode}&jdate={joindate}";
-
+            string targetUrl = $"vefiryStaff.aspx?n={nm}&e={em}&m={mo}&d={db}&g={ge}&pos={pos}&sl={sl}&ad={add}&rNo={activationgcode}&jdate={joindate}&simg={img1.FileName}";
+            con.Close();
+            string pimg1 = "~/admin/assets/images/staff/" + img1.FileName;
+            //string pimg1 = "~/img/"+img1.FileName;
+            img1.SaveAs(MapPath(pimg1));
+            con.Open();
             Response.Redirect(targetUrl);
 
             /*Response.Redirect($"verifyEmail.aspx?nm={n}");

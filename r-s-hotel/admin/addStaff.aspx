@@ -113,7 +113,15 @@
                                 </div>
                             </div>
 
+                            <div class="form-group d-flex fg">
+                            <label for="name" class="col-sm-3 control-label text-start h4">Room Image </label>
 
+                            <div class="col-sm-3">
+                                <asp:FileUpload ID="img1" runat="server" />
+                                <asp:RequiredFieldValidator ID="imgValidator1" runat="server" ControlToValidate="img1"
+                                    ErrorMessage="Select Image" ForeColor="Red" Display="Dynamic" SetFocusOnError="True" />
+                            </div>
+                        </div>
 
                             <div class="col-12" style="display: flex; justify-content: space-between">
                                 <div class="form-floating">

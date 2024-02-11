@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 170px;">
                         <iframe class="position-relative rounded w-100 h-100" 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59378.35538835333!2d70.42256043540908!3d21.541098379148973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39580194f8317365%3A0xf2fce6f0cc4abcff!2sShree%20Swaminarayan%20Gurukul!5e0!3m2!1sen!2sin!4v1702887668902!5m2!1sen!2sin"                             
                             frameborder="0" style="min-height: 350px; border:0;" 
@@ -68,7 +68,7 @@
                             frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
                             tabindex="0"></iframe>-->
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-top: 170px;">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <form>
                                 <div class="row g-3">
@@ -117,7 +117,7 @@
                                             <label for="message">Message</label>-->
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" style="margin-top: 150px">
                                         <asp:Button ID="Button1" runat="server" Text="Send Message" class="btn btn-primary w-100 py-3" OnClick="Button1_Click" />
                                         <!--<button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>-->
                                     </div>
