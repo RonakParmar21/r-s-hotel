@@ -79,8 +79,9 @@ namespace r_s_hotel.admin
                     int rq = int.Parse(roomQ);
                     int t = roomTotal+rq;
 
-                    SqlCommand cmd = new SqlCommand("SELECT book_id, user_id, room_id, book_checkin_date, book_checkout_date, book_totalday, book_totalprice, book_totalroom, book_roomtype, book_paymentstatus, book_total_person, book_status, book_special_request, book_time FROM book WHERE room_id = @Id", con);
-                    cmd.Parameters.AddWithValue("@Id", roomId);
+                    SqlCommand cmd = new SqlCommand("SELECT book_id, user_id, room_id, book_checkin_date, book_checkout_date, book_totalday, book_totalprice, book_totalroom, book_roomtype, book_paymentstatus, book_total_person, book_status, book_special_request, book_time FROM book WHERE room_id = @Id AND book_id=@bId", con);
+                    cmd.Parameters.AddWithValue("@Id", roomId); 
+                    cmd.Parameters.AddWithValue("@bId", bookId);
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
                     int book_id = Convert.ToInt32(reader["book_id"]);
