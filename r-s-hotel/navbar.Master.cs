@@ -25,6 +25,7 @@ namespace r_s_restaurent
                 HyperLink1.Visible = true;
                 HyperLink2.Visible = false;
                 HyperLink3.Visible = true;
+                HyperLink4.Visible = false;
 
 
             }

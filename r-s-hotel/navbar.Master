@@ -89,7 +89,6 @@
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.aspx" class="dropdown-item">Booking</a>
                                         <a href="team.aspx" class="dropdown-item">Our Team</a>
                                         <a href="testimonial.aspx" class="dropdown-item">Testimonial</a>
                                     </div>
@@ -119,6 +118,10 @@
                                                             <asp:HyperLink ID="HyperLink3"
                                                                 CssClass="dropdown-item bg-dark x-large text-white" runat="server"
                                                                 NavigateUrl="profile.aspx" Visible="False">Profile
+                                                            </asp:HyperLink>
+                                                            <asp:HyperLink ID="HyperLink4"
+                                                                CssClass="dropdown-item bg-dark x-large text-white" runat="server"
+                                                                NavigateUrl="booking.aspx" Visible="False">Booking
                                                             </asp:HyperLink>
                                                             <asp:HyperLink ID="HyperLink1"
                                                                 CssClass="dropdown-item bg-dark x-large text-white" runat="server"
