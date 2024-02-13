@@ -312,6 +312,7 @@
     <Content Include="logout.aspx" />
     <Content Include="newUser.aspx" />
     <Content Include="otp.aspx" />
+    <Content Include="profile.aspx" />
     <Content Include="roomDetails.aspx" />
     <Content Include="rooms.aspx" />
     <Content Include="service.aspx" />
@@ -504,6 +505,13 @@
     </Compile>
     <Compile Include="otp.aspx.designer.cs">
       <DependentUpon>otp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="roomDetails.aspx.cs">
