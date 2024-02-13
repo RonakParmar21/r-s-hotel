@@ -216,7 +216,44 @@
         </ItemTemplate>
     </asp:DataList>
 
+    <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Review</h6>
+                    <h1 class="mb-5"><span class="text-primary text-uppercase">Our</span> Review</h1>
+                </div>
+                </div>
+        </div>
+    <div style="display: flex; justify-content: center; align-items: center; width: 60%; margin-left: 20%; margin-top: -80px;" class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <asp:GridView ID="GridView1" runat="server" CellPadding="4" BorderStyle="Solid" EditRowStyle-BorderStyle="Solid" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+        <SortedAscendingCellStyle BackColor="#FDF5AC" />
+        <SortedAscendingHeaderStyle BackColor="#4D0000" />
+        <SortedDescendingCellStyle BackColor="#FCF6C0" />
+        <SortedDescendingHeaderStyle BackColor="#820000" />
+    </asp:GridView>
+        </div>
 
-    <asp:Image ID="Image1" runat="server" />
+    <br />
+    <br />
+
+    <div style="border: 1px solid black; width: 60%; margin-left: 20%; height: 100px">
+
+
+
+    </div>
+    <br />
+    <br />
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    
 
 </asp:Content>

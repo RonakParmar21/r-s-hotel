@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="r_s_restaurent.contact" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navbar.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="r_s_restaurent.contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
