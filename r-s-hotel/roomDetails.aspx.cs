@@ -51,8 +51,19 @@ namespace r_s_hotel
             {
                 int roomId = Convert.ToInt32(e.CommandArgument);
                 Response.Redirect($"booking.aspx?RoomId={roomId}");
-                
             }
+            if(e.CommandName == "MakeReview")
+            {
+                int roomId = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect($"addReview.aspx?RoomId={roomId}");
+            }
+
+            /*else if(e.CommandName == "MakeReview")
+            {
+                string u = Session["user"].ToString();
+                int roomId = Convert.ToInt32(e.CommandArgument);
+
+            }*/
         }
     }
 }

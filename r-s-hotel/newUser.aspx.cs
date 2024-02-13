@@ -52,26 +52,33 @@ namespace r_s_hotel
                 // It's a good practice to close the connection here, but using statement will handle it as well
             }
 
-            if (uem == em)
+            if(pass == cpass)
             {
+                if (!em.Equals(uem))
+                {
 
-                long mo = long.Parse(mobile.Text);
+                    long mo = long.Parse(mobile.Text);
 
-                Random random = new Random();
-                activationgcode = random.Next(100000, 1000000);
+                    Random random = new Random();
+                    activationgcode = random.Next(100000, 1000000);
 
-                sendcode();
-                string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&g={ge}&rNo={activationgcode}&m={mo}";
+                    sendcode();
+                    string targetUrl = $"verifyEmail.aspx?n={nm}&e={em}&p={pass}&cp={cpass}&d={db}&g={ge}&rNo={activationgcode}&m={mo}";
 
-                Response.Redirect(targetUrl);
+                    Response.Redirect(targetUrl);
 
-                /*Response.Redirect($"verifyEmail.aspx?nm={n}");
-                Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
-                */
+                    /*Response.Redirect($"verifyEmail.aspx?nm={n}");
+                    Response.Redirect($"verifyEmail.aspx?rNo={activationgcode}");
+                    */
+                }
+                else
+                {
+                    Response.Write("<script>alert('Email Already Registered')</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('Email Already Registered')</script>");
+                Response.Write("<script>alert('Password not match')</script>");
             }
 
 

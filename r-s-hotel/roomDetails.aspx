@@ -201,8 +201,13 @@
 
                     <!-- button -->
                     
-                    <div>
+                    <div style="display: flex; gap: 5px;">
+                        <div>
                         <asp:LinkButton ID="LinkButtonViewDetail" runat="server" Visible='<%# Convert.ToInt32(Eval("room_total")) != 0 %>' CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="BookNow" CommandArgument='<%# Eval("room_id") %>'>Book Now</asp:LinkButton>
+                    </div>
+                    <div>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Visible='<%# Convert.ToInt32(Eval("room_total")) != 0 %>' CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="MakeReview" CommandArgument='<%# Eval("room_id") %>'>Make Review</asp:LinkButton>
+                    </div>
                     </div>
 
                 </div>
@@ -210,6 +215,7 @@
 
         </ItemTemplate>
     </asp:DataList>
+
 
     <asp:Image ID="Image1" runat="server" />
 
