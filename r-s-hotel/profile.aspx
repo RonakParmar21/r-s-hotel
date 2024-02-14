@@ -148,48 +148,26 @@
                 <img src="img/user.png" alt="profile-pic" class="profile-pic">
             </div>
             <div id="lower-bg">
-                <div class="text">
-                    <p class="name">Md. Nasemul Islam</p>
-                    <p class="title">
-                        Web developer &
-                        <br>
-                        Competitive programmer
-                    </p>
-                </div>
-                <!--
-                <div id="icons">
-                    <a href="#" class="ico">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new" /></a>
-                    <a href="#" class="ico">
-                        <img width="48" height="48" src="https://img.icons8.com/fluency/48/github.png" alt="github" />
-                    </a>
-                    <a href="#" class="ico">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />
-                    </a>
-                    <a href="#" class="ico">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" />
-                    </a>
-                </div>-->
-                <div id="btn">
-                    <button class="msg">Subscribe</button>
-                    <button class="msg">Message</button>
-                </div>
-                <div id="l-c-s">
-                    <!--<div class="num">
-                        <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/facebook-like--v1.png" alt="facebook-like--v1" />
-                        <span>35k</span>
-                    </div>
-                    <div class="num dvr"></div>
-                    <div class="num">
-                        <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/speech-bubble--v1.png" alt="speech-bubble--v1" />
-                        <span>20k</span>
-                    </div>
-                    <div class="num dvr"></div>
-                    <div class="num">
-                        <img width="48" height="48" src="https://img.icons8.com/pulsar-line/48/share.png" alt="share" />
-                        <span>15k</span>
-                    </div>-->
-                </div>
+                <asp:DataList ID="DataList1" runat="server" OnItemCommand="DataList1_ItemCommand">
+                    <ItemTemplate>
+
+                        <div class="text">
+                            <h1 style="text-transform: uppercase; font-size: 2rem;" class="name">
+                                <%# Eval("user_name") %>
+                            </h1>
+                        </div>
+                        <div id="btn" style="width: 90%; display: flex; flex-direction: column; gap: 10px;">
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="CBooking" CommandArgument='<%# Eval("user_id") %>'>Current Booking</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-sm btn-primary rounded py-2 px-4" CommandName="HBooking" CommandArgument='<%# Eval("user_id") %>'>Booking History</asp:LinkButton>
+                            <!--<button class="msg" style="width: 100%;"></button>-->
+                        </div>
+                        <button class="msg">Message</button>
+                        <div id="l-c-s">
+                        </div>
+
+                    </ItemTemplate>
+                </asp:DataList>
+
             </div>
         </div>
     </div>

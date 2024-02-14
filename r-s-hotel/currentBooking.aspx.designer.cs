@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace r_s_restaurent
+namespace r_s_hotel
 {
 
 
-    public partial class testimonial
+    public partial class currentBooking
     {
 
         /// <summary>
-        /// DataList1 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

@@ -260,9 +260,11 @@
     <Content Include="admin\viewUserDetails.aspx" />
     <Content Include="bookConfirm.aspx" />
     <Content Include="booking.aspx" />
+    <Content Include="bookingHistory.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="currentBooking.aspx" />
     <Content Include="default.aspx" />
     <Content Include="img\about-1.jpg" />
     <Content Include="img\about-2.jpg" />
@@ -457,12 +459,26 @@
     <Compile Include="booking.aspx.designer.cs">
       <DependentUpon>booking.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bookingHistory.aspx.cs">
+      <DependentUpon>bookingHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookingHistory.aspx.designer.cs">
+      <DependentUpon>bookingHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="currentBooking.aspx.cs">
+      <DependentUpon>currentBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="currentBooking.aspx.designer.cs">
+      <DependentUpon>currentBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

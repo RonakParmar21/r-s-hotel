@@ -90,7 +90,7 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu rounded-0 m-0">
                                         <a href="team.aspx" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.aspx" class="dropdown-item">Testimonial</a>
+                                        <!--<a href="testimonial.aspx" class="dropdown-item">Testimonial</a>-->
                                     </div>
                                 </div>
                                 <a href="contact.aspx" class="nav-item nav-link">Contact</a>
@@ -152,22 +152,35 @@
                         <div class="bg-primary rounded p-4">
                             <a href="index.html"><h1 class="text-white text-uppercase mb-3">R&S Hotel</h1></a>
                             <p class="text-white mb-0">
-								Download <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>, build a professional website for your hotel business and grab the attention of new visitors upon your site’s launch.
+								<!--Download <a class="text-dark fw-medium" href="hts://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>, build a professional website for your hotel business and grab the attention of new visitors upon your site’s launch.-->
+                                We strive to make the lives of our patrons easier by multiplying revenue channels and using our technological expertise to maximize demand.
 							</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Junagadh, Gujarat, India</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 70480 08727</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Bilkha, Junagadh, Gujarat, India</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99244 50208</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>parmarronak21112003@gmail.com</p>
                         <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/parmar-ronak-4aa170219/"><i class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Junagadh, Gujarat, India</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 94276 77342</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>smeetrathod963@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/smeet-rathod/"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>                            
+                        </div>
+                    </div>
+                    <!--
                     <div class="col-lg-5 col-md-12">
                         <div class="row gy-5 g-4">
                             <div class="col-md-6">
@@ -187,7 +200,7 @@
                                 <a class="btn btn-link" href="">GYM & Yoga</a>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="container">

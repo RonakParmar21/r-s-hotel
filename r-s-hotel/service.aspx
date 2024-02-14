@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <h5 class="mb-3">Rooms & Appartment</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <p class="text-body mb-0">Room service or in-room dining is a hotel service enabling guests to choose items of food and drink for delivery to their hotel room for consumption. </p>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                             <h5 class="mb-3">Food & Restaurant</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <p class="text-body mb-0">The menu can range from a simple soup and salad to more elaborate dishes like pasta, poultry, or even lobster.</p>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -62,8 +62,9 @@
                                     <i class="fa fa-spa fa-2x text-primary"></i>
                                 </div>
                             </div>
-                            <h5 class="mb-3">Spa & Fitness</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <h5 class="mb-3">Sports & Gaming</h5>
+                            <p class="text-body mb-0">
+Future Gaming was created out of the idea to enjoy a game to its fullest potential without the daily grind.</p>
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
@@ -106,7 +107,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+        <!--<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel py-5">
                     <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
@@ -144,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Testimonial End -->
 
 
@@ -166,5 +167,8 @@
         </div>-->
         <!-- Newsletter Start -->
         </div>
+    <br />
+    <br />
+    <br />
     <br />
 </asp:Content>
