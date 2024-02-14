@@ -266,6 +266,8 @@
     <Content Include="css\style.css" />
     <Content Include="currentBooking.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="forgotPassword.aspx" />
+    <Content Include="forgotPasswordVerify.aspx" />
     <Content Include="img\about-1.jpg" />
     <Content Include="img\about-2.jpg" />
     <Content Include="img\about-3.jpg" />
@@ -486,6 +488,20 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPasswordVerify.aspx.cs">
+      <DependentUpon>forgotPasswordVerify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPasswordVerify.aspx.designer.cs">
+      <DependentUpon>forgotPasswordVerify.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

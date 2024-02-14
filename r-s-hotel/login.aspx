@@ -39,7 +39,7 @@
                                            <a href="newUser.aspx">New User?</a>
                                         </div>
                                         <div class="form-floating">
-                                           <a href="#">forgot password</a>
+                                           <a href="forgotPassword.aspx">forgot password</a>
                                         </div>
                                     </div>
                                     <div class="col-12">
