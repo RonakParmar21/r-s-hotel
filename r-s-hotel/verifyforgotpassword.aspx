@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="verifyforgotpassword.aspx.cs" Inherits="r_s_hotel.verifyforgotpassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="verifyForgotPassword.aspx.cs" Inherits="r_s_hotel.verifyForgotPassword" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style>
+     <style>
         body {
             background-color: #f0f0f0;
         }
@@ -53,16 +53,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <form id="form2" runat="server">
-        <h1 style="display:flex; align-self:center; justify-content:center;">Enter OTP</h1>
+            <h1 style="display:flex; align-self:center; justify-content:center;">Enter OTP</h1>
         <asp:TextBox ID="TextBox1" runat="server" TextMode="Number"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         <br />
         <br />
-        <!--<asp:Label ID="Label1" runat="server" Text="Random no is : "></asp:Label>-->
-    </form>
         </div>
     </form>
 </body>

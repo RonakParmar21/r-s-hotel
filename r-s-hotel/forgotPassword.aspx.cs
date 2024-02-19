@@ -28,7 +28,7 @@ namespace r_s_hotel
                     activationgcode = random.Next(100000, 1000000);
 
                     sendcode();
-                    string targetUrl = $"verifyforgotpassword.aspx?e={em}";
+                    string targetUrl = $"verifyForgotPassword.aspx?e={em}&rNo={activationgcode}";
 
                     Response.Redirect(targetUrl);
 

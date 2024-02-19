@@ -268,6 +268,7 @@
     <Content Include="default.aspx" />
     <Content Include="forgotPassword.aspx" />
     <Content Include="forgotPasswordVerify.aspx" />
+    <Content Include="fpassword.aspx" />
     <Content Include="img\about-1.jpg" />
     <Content Include="img\about-2.jpg" />
     <Content Include="img\about-3.jpg" />
@@ -324,6 +325,7 @@
     <Content Include="test.aspx" />
     <Content Include="testimonial.aspx" />
     <Content Include="verifyEmail.aspx" />
+    <Content Include="verifyForgotPassword.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -503,6 +505,13 @@
     <Compile Include="forgotPasswordVerify.aspx.designer.cs">
       <DependentUpon>forgotPasswordVerify.aspx</DependentUpon>
     </Compile>
+    <Compile Include="fpassword.aspx.cs">
+      <DependentUpon>fpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fpassword.aspx.designer.cs">
+      <DependentUpon>fpassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -594,6 +603,13 @@
     </Compile>
     <Compile Include="verifyEmail.aspx.designer.cs">
       <DependentUpon>verifyEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verifyForgotPassword.aspx.cs">
+      <DependentUpon>verifyForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verifyForgotPassword.aspx.designer.cs">
+      <DependentUpon>verifyForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
