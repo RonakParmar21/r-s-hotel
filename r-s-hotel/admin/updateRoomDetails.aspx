@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" CodeBehind="addRoom.aspx.cs" Inherits="r_s_hotel.admin.addRoom" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/nav_footer.Master" AutoEventWireup="true" CodeBehind="updateRoomDetails.aspx.cs" Inherits="r_s_hotel.admin.updateRoomDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <head >
         <title>Add Room</title>
       <style>
@@ -67,10 +67,10 @@
                                 <asp:DropDownList ID="category" runat="server" Height="30px" Width="500px">
                                     <asp:ListItem Value="">Select Room Type</asp:ListItem>
                                     <asp:ListItem Value="acs">ac single</asp:ListItem>
-                                    <asp:ListItem Value="dob">ac double</asp:ListItem>
-                                    <asp:ListItem Value="dilux">dilux</asp:ListItem>
-                                    <asp:ListItem Value="sdilux">super dilux</asp:ListItem>
-                                    <asp:ListItem Value="nacs">non ac single</asp:ListItem>
+                                    <asp:ListItem Value="">ac double</asp:ListItem>
+                                    <asp:ListItem Value="">dilux</asp:ListItem>
+                                    <asp:ListItem Value="">super dilux</asp:ListItem>
+                                    <asp:ListItem Value="">non ac single</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="roomTypeValidator" runat="server" ControlToValidate="category"
                                     InitialValue="" ErrorMessage="Select Room Type" ForeColor="Red" Display="Dynamic"
@@ -159,4 +159,5 @@
             </section>
         </div>
     </body>
+
 </asp:Content>

@@ -252,6 +252,8 @@
     <Content Include="admin\contactDetails.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\login.aspx" />
+    <Content Include="admin\updateRoomDetails.aspx" />
+    <Content Include="admin\updateStaffDetails.aspx" />
     <Content Include="admin\vefiryStaff.aspx" />
     <Content Include="admin\verify.aspx" />
     <Content Include="admin\viewBookingDetails.aspx" />
@@ -406,6 +408,20 @@
     </Compile>
     <Compile Include="admin\nav_footer.Master.designer.cs">
       <DependentUpon>nav_footer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\updateRoomDetails.aspx.cs">
+      <DependentUpon>updateRoomDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\updateRoomDetails.aspx.designer.cs">
+      <DependentUpon>updateRoomDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\updateStaffDetails.aspx.cs">
+      <DependentUpon>updateStaffDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\updateStaffDetails.aspx.designer.cs">
+      <DependentUpon>updateStaffDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\vefiryStaff.aspx.cs">
       <DependentUpon>vefiryStaff.aspx</DependentUpon>

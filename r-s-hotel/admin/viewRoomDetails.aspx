@@ -86,6 +86,11 @@
             </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
+                    <asp:Button ID="btnUpdate" runat="server" CommandArgument='<%# Bind("room_id") %>' Text="Update"  CssClass="btn btn-grd-success" OnCommand="btnUpdate_Command" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
                     <asp:Button ID="btnDelete" runat="server" CommandArgument='<%# Bind("room_id") %>' Text="Delete"  CssClass="btn btn-danger" OnCommand="btnDelete_Command" />
                 </ItemTemplate>
             </asp:TemplateField>

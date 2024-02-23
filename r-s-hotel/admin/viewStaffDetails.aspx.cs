@@ -23,7 +23,6 @@ namespace r_s_hotel.admin
                 {
                     con.Close();
                 }
-
                 con.Open();
                 displayData();
             }
@@ -47,12 +46,24 @@ namespace r_s_hotel.admin
             string Id = e.CommandArgument.ToString();
             deleteRecord(Id);
         }
+
+        protected void btnUpdate_Command(object sender, CommandEventArgs e)
+        {
+            string Id = e.CommandArgument.ToString();
+            updateRecord(Id);
+        }
+
         public void deleteRecord(string id)
         {
             cmd = new SqlCommand("delete from staff where staff_id = '" + id + "'", con);
             cmd.ExecuteNonQuery();
             displayData();
             Response.Write("<script>alert('Record Deleted...')</script>");
+        }
+
+        public void updateRecord(string id)
+        {
+            Response.Redirect($"updateStaffDetails.aspx?i={id}");
         }
     }
 }
