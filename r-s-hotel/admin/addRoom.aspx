@@ -67,7 +67,7 @@
                                 <asp:DropDownList ID="category" runat="server" Height="30px" Width="500px">
                                     <asp:ListItem Value="">Select Room Type</asp:ListItem>
                                     <asp:ListItem Value="acs">ac single</asp:ListItem>
-                                    <asp:ListItem Value="dob">ac double</asp:ListItem>
+                                    <asp:ListItem Value="acd">ac double</asp:ListItem>
                                     <asp:ListItem Value="dilux">dilux</asp:ListItem>
                                     <asp:ListItem Value="sdilux">super dilux</asp:ListItem>
                                     <asp:ListItem Value="nacs">non ac single</asp:ListItem>
