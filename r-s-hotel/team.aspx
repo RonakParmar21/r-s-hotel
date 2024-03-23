@@ -176,7 +176,7 @@
                              <div class="room-item shadow rounded overflow-hidden" style="margin: 10px;">
                                  <div class="position-relative">
 
-                                        <asp:Image ID="Image2" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("staff_img") %>' Style="width: 100%;" />
+                                        <asp:Image ID="Image2" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("staff_img") %>' Style="width: 30vw; height: 35vw;" />
                                         <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                             <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink4" runat="server"><i class="fab fa-facebook-f"></i></asp:HyperLink>
                                             <asp:HyperLink class="btn btn-square btn-primary mx-1" ID="HyperLink1" runat="server"><i class="fab fa-twitter"></i></asp:HyperLink>

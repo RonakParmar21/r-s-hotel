@@ -42,7 +42,7 @@ namespace r_s_hotel
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("parmarronak21112003@gmail.com", "edgk duom pynn eyzj");
+            smtp.Credentials = new System.Net.NetworkCredential("parmarronak21112003@gmail.com", "Your Passkey");
             smtp.EnableSsl = true;
             MailMessage msg = new MailMessage();
             msg.Subject = "activation code to verify email address";

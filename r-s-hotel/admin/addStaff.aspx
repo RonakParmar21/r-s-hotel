@@ -114,7 +114,7 @@
                             </div>
 
                             <div class="form-group d-flex fg">
-                            <label for="name" class="col-sm-3 control-label text-start h4">Room Image </label>
+                            <label for="name" class="col-sm-3 control-label text-start h4">Staff Image </label>
 
                             <div class="col-sm-3">
                                 <asp:FileUpload ID="img1" runat="server" />
@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="GET OTP" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" runat="server" class="btn btn-primary w-100 py-3" Text="Add Staff" OnClick="Button1_Click" />
                             </div>
                         </div>
 
